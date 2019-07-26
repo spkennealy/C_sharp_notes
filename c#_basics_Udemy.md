@@ -104,3 +104,21 @@ checked
     number = number + 1; // 0
 }
 ```
+
+### **Scope**
+
+Scope is where a variable or a constant has meaning and is accessible. The varialbe or constant is available in the same clode block, or an of it's child blocks. If you attempt to access the variable outside of it's code block, the program will not compile.
+```csharp
+{
+    byte a = 1;
+    {
+        byte b = 2;
+        {
+            byte c = 3;
+        }
+    }
+}
+```
+* `a` is accessible inside `a`, `b` & `c`
+* `b` is accessible inside `b` & `c`
+* `c` is accessible inside `c`
