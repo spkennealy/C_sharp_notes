@@ -122,3 +122,8 @@ Scope is where a variable or a constant has meaning and is accessible. The varia
 * `a` is accessible inside `a`, `b` & `c`
 * `b` is accessible inside `b` & `c`
 * `c` is accessible inside `c`
+
+### **`var`**
+
+Instead of typing out `byte`, `int`, etc, as the data type, you can use `var` to set a vairalbe and the compilier will detect which data type it is. For all numbers, `var` will detect it as an integer.
+
