@@ -84,3 +84,39 @@ Scope is where a variable or a constant has meaning and is accessible. The varia
 
 Instead of typing out `byte`, `int`, etc, as the data type, you can use `var` to set a vairalbe and the compilier will detect which data type it is. For all numbers, `var` will detect it as an integer.
 
+
+### **Type Conversion**
+
+* Implicit Type Conversion
+    * Example:
+```csharp
+// will compile
+byte b = 1;
+int i = b;
+
+// won't compile
+int i = 1;
+byte b = i; // this won't work
+byte b = (byte)i // this is casting
+```
+* Explicit Type Conversion (casting)
+    * Example:
+```csharp
+// will compile
+float f = 1.0f;
+int i = (int)f;
+```
+* Conversion between two non-compatible types
+    * Example:
+```csharp
+string s = "1";
+int i = (int)s; // won't compile
+int j = Convert.ToInt32(s); // this works
+int j = int.Parse(s); // this works
+```
+
+#### **Convert Methods**
+* ToByte()
+* ToInt16()
+* ToInt32()
+* ToInt64()
