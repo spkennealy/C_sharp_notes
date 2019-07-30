@@ -120,3 +120,14 @@ int j = int.Parse(s); // this works
 * ToInt16()
 * ToInt32()
 * ToInt64()
+
+### **Operators**
+
+* `=` = assigns
+* `+=` = adds & reassigns
+* `-=` = subtracts & reassigns
+* `*=` = divided & reassigns
+* `/=` = divided & reassigns
+* `&&` = and
+* `||` = or
+* `!` = not
