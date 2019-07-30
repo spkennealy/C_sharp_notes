@@ -24,6 +24,7 @@ const float Pi = 3.14f;
 
 ### **Primitive Data Types**
 * Integral numbers (`byte`, `short`, `int`, `long`)
+    * `long` is equivalent to `int64` in .NET
 * Real numbers (`float`, `double`, `decimal`)
 * Character (`char`)
 * Boolean (`bool`)
@@ -131,3 +132,17 @@ int j = int.Parse(s); // this works
 * `&&` = and
 * `||` = or
 * `!` = not
+
+Things to remember:
+* Dividing an integer by another integer will produce an integer and not a float.
+    * Example: `10 / 3 = 3`
+* Multiply & division has higher precedence than adding and subtracting.
+* Comparison operators will result in boolean response.
+
+### **Comments**
+```csharp
+// single line comments
+/* 
+    multy line comments
+*/
+```
