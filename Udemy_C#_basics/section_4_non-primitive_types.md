@@ -73,9 +73,43 @@ numbers[2] = 3;
 
 Arrays must have a fixed size, therefore you must declare the size of the array from the beginning.
 
+Default values will be the default value of that data type. For example, `int` would default to `0` and `bool` will default to `false`.
+
 ### **Strings**
 
+A string is a sequence of characters. Must be surrounded by double quotes.
+```csharp
+string firstName = "Sean";
+string lastName = "Kennealy";
 
+string name = firstName + " " + lastName; // you can concatenate strings too
+
+string name = string.Format("{0} {1}", firstName, lastName); // can use the format static method on the string class
+
+// create strings using join
+var number = new int[3] {1, 2, 3};
+string list = string.Join(",", numbers);
+
+// access strings using index
+string name = "Sean";
+char firstChar = name[0];
+```
+* `"{0} {1}"` is a placeholder. The numbers are the indicies.
+* In `string.Join` the first arguement is what you want to join them on and the second is the array.
+* Strings are immutable and, once you create them, you *cannot* change them.
+
+**Special Characters in C#**
+* `\n` = new line
+* `\t` = tab
+* `\\` = backslash
+* `\'` = single quotation mark
+* `\"` = dobule quotation mark
+
+**Verbatim Strings**
+```csharp
+string path = "c:\\projects\\projects1\\folder1";
+string path = @"c:\projects\projects1\folder1"; // using the @ sybmol will allow for a verbatim string or stirng literal
+```
 
 ### **Enums**
 
