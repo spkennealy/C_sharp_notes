@@ -54,7 +54,24 @@ public struct RbgColor
 
 ### **Arrays**
 
+An array is a data structure to store a collection of variables of the same type. 
 
+Declaring arrays:
+```csharp
+int number1;
+int number2;
+int number3;
+
+int[] numbers = new int[3] { 1, 2, 3 }; // the int[3] sets the size of the array
+// during declaration you can supply a code block with the values.
+
+// or you can assign them after
+numbers[0] = 1;
+numbers[1] = 2;
+numbers[2] = 3;
+```
+
+Arrays must have a fixed size, therefore you must declare the size of the array from the beginning.
 
 ### **Strings**
 
