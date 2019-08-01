@@ -111,9 +111,47 @@ string path = "c:\\projects\\projects1\\folder1";
 string path = @"c:\projects\projects1\folder1"; // using the @ sybmol will allow for a verbatim string or stirng literal
 ```
 
+**Another example of string building**
+```csharp
+var firstName = "Sean";
+var lastName = "Kennealy";
+var myFullName = string.Format("My full name is {0} {1}", firstName, lastName);
+```
+
 ### **Enums**
 
+An enum is a set of name/value pairs (constants). Use an enum where you have mulitple relatable constants. An enum must be defined at the namespace level.
 
+If you do not set a value to the first enum, it's value will be set to 0 and each one after that will be incremented by 1.
+
+```csharp
+using System;
+
+namespace CSharpFundamentals
+{
+    public enum ShippingMethod
+    {
+        RegularAirMail = 1,
+        RegisteredAirMail = 2,
+        Express = 3
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var method = ShippingMethod.Express;
+            Console.WriteLine((int)method); // must cast to convert it to an integer
+
+            var methodId = 3;
+            Console.WriteLine((ShippingMethod)methodId); // can cast it to a shipping method and will return "Express"
+
+            var methodName = "Express";
+            var shippingMethod = (ShippingMethod)Enum.Parse(typeof(ShippingMethod), methodName);
+        }
+    }
+}
+```
 
 ### **Reference Types & Value Types**
 
