@@ -155,3 +155,17 @@ namespace CSharpFundamentals
 
 ### **Reference Types & Value Types**
 
+**Classes vs Structures**
+* Structures
+    * Examples: primitive types & custom structures
+    * Structures are value types
+    * Allocated on stack
+    * Memory allocation done automatically
+    * Immediately removed from the stack when out of scope
+* Classes
+    * Examples: arrays, strings, & custom classes
+    * Classes are reference types
+    * You (the programmer) needs to allocate mememory
+    * Memory allocated on heap (when using the `new` keyword)
+    * It won't be immediately removed when out of scope, but will be garbage collected by CLR 
+
