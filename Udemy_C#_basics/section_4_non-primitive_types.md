@@ -169,3 +169,4 @@ namespace CSharpFundamentals
     * Memory allocated on heap (when using the `new` keyword)
     * It won't be immediately removed when out of scope, but will be garbage collected by CLR 
 
+When you copy a value type to another variable, the value is taken. When you copy a reference type, then when you try and change the value of the copy, you will change the value of the original.
