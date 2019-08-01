@@ -9,7 +9,7 @@
 // if/else example:
 if (condition) 
 {
-    someCode
+    someCode // if you have one line of code, then no curly braces are needed
 }
 else if (condition)
 {

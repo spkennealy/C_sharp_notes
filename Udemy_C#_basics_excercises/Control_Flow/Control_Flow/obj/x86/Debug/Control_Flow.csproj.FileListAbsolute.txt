@@ -1,0 +1,6 @@
+/Users/seanykiki/Desktop/Insightly/C#/Udemy_C#_basics_excercises/Control_Flow/Control_Flow/obj/x86/Debug/Control_Flow.csprojAssemblyReference.cache
+/Users/seanykiki/Desktop/Insightly/C#/Udemy_C#_basics_excercises/Control_Flow/Control_Flow/obj/x86/Debug/Control_Flow.csproj.CoreCompileInputs.cache
+/Users/seanykiki/Desktop/Insightly/C#/Udemy_C#_basics_excercises/Control_Flow/Control_Flow/bin/Debug/Control_Flow.exe
+/Users/seanykiki/Desktop/Insightly/C#/Udemy_C#_basics_excercises/Control_Flow/Control_Flow/bin/Debug/Control_Flow.pdb
+/Users/seanykiki/Desktop/Insightly/C#/Udemy_C#_basics_excercises/Control_Flow/Control_Flow/obj/x86/Debug/Control_Flow.exe
+/Users/seanykiki/Desktop/Insightly/C#/Udemy_C#_basics_excercises/Control_Flow/Control_Flow/obj/x86/Debug/Control_Flow.pdb
