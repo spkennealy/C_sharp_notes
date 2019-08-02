@@ -6,15 +6,15 @@ namespace Control_Flow
     {
         public static void Main(string[] args)
         {
-            //Conditionals.Excercise1();
-            //Conditionals.Excercise2();
-            //Conditionals.Excercise3();
-            //Conditionals.Excercise4();
-            //IterationStatements.Excercise1();
-            //IterationStatements.Excercise2();
-            //IterationStatements.Excercise3();
+            Conditionals.Excercise1();
+            Conditionals.Excercise2();
+            Conditionals.Excercise3();
+            Conditionals.Excercise4();
+            IterationStatements.Excercise1();
+            IterationStatements.Excercise2();
+            IterationStatements.Excercise3();
             IterationStatements.Excercise4();
-            //IterationStatements.Excercise5();
+            IterationStatements.Excercise5();
         }
 
         // 1- Write a program and ask the user to enter a number. The number should be between 1 to 10. If the user enters a valid number,
@@ -130,7 +130,7 @@ namespace Control_Flow
             }
         }
 
-        // 3- Write a program and ask the user to enter a number.Compute the factorial of the number and print it on the console.
+        // 3- Write a program and ask the user to enter a number. Compute the factorial of the number and print it on the console.
         // For example, if the user enters 5, the program should calculate 5 x 4 x 3 x 2 x 1 and display it as 5! = 120.
 
         public static void Excercise3()
@@ -149,7 +149,7 @@ namespace Control_Flow
             Console.WriteLine("The factorial is: " + factorial);
         }
 
-        // 4- Write a program that picks a random number between 1 and 10. Give the user 4 chances to guess the number.If the
+        // 4- Write a program that picks a random number between 1 and 10. Give the user 4 chances to guess the number. If the
         // user guesses the number, display “You won"; otherwise, display “You lost". (To make sure the program is behaving
         // correctly, you can display the secret number on the console first.)
 
@@ -176,12 +176,23 @@ namespace Control_Flow
             Console.WriteLine("You lost!");
         }
 
-        // 5- Write a program and ask the user to enter a series of numbers separated by comma.Find the maximum of the numbers
-        // and display it on the console.For example, if the user enters “5, 3, 8, 1, 4", the program should display 8.
+        // 5- Write a program and ask the user to enter a series of numbers separated by comma. Find the maximum of the numbers
+        // and display it on the console. For example, if the user enters “5, 3, 8, 1, 4", the program should display 8.
 
         public static void Excercise5()
         {
+            Console.WriteLine("Please enter a series of numbers separated by a comma (ex. 5, 3, 1, 8, 4): ");
+            var input = Console.ReadLine();
+            var nums = input.Split(',');
+            var maxNum = Convert.ToInt32(nums[0]);
 
+            foreach (var num in nums)
+            {
+                if (Convert.ToInt32(num) > maxNum)
+                    maxNum = Convert.ToInt32(num);
+            }
+
+            Console.WriteLine("The max number is " + maxNum); 
         }
     }
 }
