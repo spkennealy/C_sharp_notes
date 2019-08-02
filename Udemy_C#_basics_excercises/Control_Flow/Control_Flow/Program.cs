@@ -11,9 +11,9 @@ namespace Control_Flow
             //Conditionals.Excercise3();
             //Conditionals.Excercise4();
             //IterationStatements.Excercise1();
-            IterationStatements.Excercise2();
+            //IterationStatements.Excercise2();
             //IterationStatements.Excercise3();
-            //IterationStatements.Excercise4();
+            IterationStatements.Excercise4();
             //IterationStatements.Excercise5();
         }
 
@@ -116,7 +116,18 @@ namespace Control_Flow
 
         public static void Excercise2()
         {
+            var sum = 0;
+            while (true)
+            {
+                Console.WriteLine("Please enter a number or \"ok\" to exit: ");
+                var input1 = Console.ReadLine();
+                if (input1 == "ok" || input1 == "OK" || input1 == "Ok" || input1 == "oK")
+                    break;
+                var number = Convert.ToInt32(input1);
+                sum += number;
 
+                Console.WriteLine("Sum: " + sum);
+            }
         }
 
         // 3- Write a program and ask the user to enter a number.Compute the factorial of the number and print it on the console.
@@ -124,7 +135,18 @@ namespace Control_Flow
 
         public static void Excercise3()
         {
+            Console.WriteLine("Please enter a number: ");
+            var input1 = Console.ReadLine();
+            var number = Convert.ToInt32(input1);
+            var factorial = 1;
 
+            while (number > 1)
+            {
+                factorial *= number;
+                number--;
+            }
+
+            Console.WriteLine("The factorial is: " + factorial);
         }
 
         // 4- Write a program that picks a random number between 1 and 10. Give the user 4 chances to guess the number.If the
