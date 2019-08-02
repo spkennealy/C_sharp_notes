@@ -155,7 +155,25 @@ namespace Control_Flow
 
         public static void Excercise4()
         {
+            var random = new Random();
+            var randomNumber = random.Next(1, 10);
+            var guesses = 0;
 
+            while (guesses < 4)
+            {
+                Console.WriteLine("Guess a number between 1 and 10: ");
+                var input1 = Console.ReadLine();
+                var guessedNumber = Convert.ToInt32(input1);
+                guesses++;
+
+                if (guessedNumber == randomNumber)
+                {
+                    Console.WriteLine("You won!");
+                    return;
+                }
+            }
+
+            Console.WriteLine("You lost!");
         }
 
         // 5- Write a program and ask the user to enter a series of numbers separated by comma.Find the maximum of the numbers
