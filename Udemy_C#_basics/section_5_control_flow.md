@@ -37,6 +37,52 @@ switch (role)
 
 ### **Iteration Statements**
 
+The 4 main iteration statements in C#:
+* `for`
+* `foreach`
+* `while`
+* `do-while`
 
+**`for`**
+```csharp
+for (var i = 0; i < 10; i++)
+{
+    // ...
+}
+```
+
+**`foreach`**
+* can be used on anything with a list nature (ie strings, arrays)
+```csharp
+foreach (var number in numbers)
+{
+    // ...
+}
+```
+
+**`while`**
+```csharp
+var i = 0;
+while (i < 10)
+{
+    // ...
+    i++;
+}
+```
+
+**`do-while`**
+* the block must be executed at least once because the `while` check comes after the block.
+```csharp
+var i = 0;
+do
+{
+    // ...
+    i++;
+} while (i < 10)
+```
+
+**Important Keywords**
+* `break`: jumps out of the loop
+* `continue`: jumps to the next iteration of the loop
 
 ### **Random Class**
