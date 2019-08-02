@@ -86,3 +86,23 @@ do
 * `continue`: jumps to the next iteration of the loop
 
 ### **Random Class**
+
+The random class is used mostly to generate random numbers. You must create an instance of the random class.
+```csharp
+using System;
+
+namespace CSharpFundamentals
+{
+    class Program 
+    {
+        static void Main(string[] args)
+        {
+            var random = new Random();
+            random.Next();
+        }
+    }
+}
+```
+
+`random.Next()` will create a random number.
+* if you pass two arguments to `random.Next(1, 10)`, then it will produce a random number between 1 and 10.
