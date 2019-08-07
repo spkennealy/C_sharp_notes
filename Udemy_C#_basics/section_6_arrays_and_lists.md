@@ -87,3 +87,29 @@ var numbers = new List<int>();
 
 ### **Lists Demo**
 
+```csharp
+namespace CSharpFundamentals
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var numbers = new List<int>() { 1, 2, 3, 4 };
+
+            numbers.Add(1);
+            numbers.AddRange(new int[3] { 5, 6, 7 });
+            // result = [1, 2, 3, 4, 1, 5, 6, 7]
+            
+            numbers.IndexOf(1); // 0
+            numbers.LastIndexOf(1); // 4
+
+            numbers.Count // returns 8
+
+            numbers.Remove(1) // [2, 3, 4, 1, 5, 6, 7] it removes the first 1
+            // if you want to remove all the 1s, iterate over the list and remove if 1 (should be a regular for loop)
+
+            numbers.Clear() // [] it clears the entire list
+        }
+    }
+}
+```
