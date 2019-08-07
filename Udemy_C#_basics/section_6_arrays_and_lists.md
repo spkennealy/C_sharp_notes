@@ -58,6 +58,9 @@ namespace CSharpFundamentals
 
             // Sort()
             Array.Sort(numbers) // [0, 0, 2, 6, 9, 14]
+
+            // Reverse()
+            Array.Reverse(numbers) // [14, 9, 6, 2, 0, 0]
         }
     }
 }
