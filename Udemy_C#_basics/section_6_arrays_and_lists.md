@@ -68,3 +68,22 @@ namespace CSharpFundamentals
 
 ### **Lists**
 
+Similat to an array, but has a dynamic size. Stores a number of objects of the same type.
+
+**Creating lists:**
+```csharp
+var numbers = new List<int>();
+// you must specifiy the data type in the <> brackets
+```
+
+**Useful methods**
+* Add()
+* AddRange()
+* Remove()
+* RemoveAt()
+* IndexOf()
+* Contains()
+* Count()
+
+### **Lists Demo**
+
