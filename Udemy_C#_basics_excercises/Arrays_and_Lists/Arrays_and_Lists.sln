@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrays_and_Lists", "Arrays_and_Lists\Arrays_and_Lists.csproj", "{90F40B4B-1177-403A-B5A0-629FFA7DCF85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90F40B4B-1177-403A-B5A0-629FFA7DCF85}.Debug|x86.ActiveCfg = Debug|x86
+		{90F40B4B-1177-403A-B5A0-629FFA7DCF85}.Debug|x86.Build.0 = Debug|x86
+		{90F40B4B-1177-403A-B5A0-629FFA7DCF85}.Release|x86.ActiveCfg = Release|x86
+		{90F40B4B-1177-403A-B5A0-629FFA7DCF85}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal
