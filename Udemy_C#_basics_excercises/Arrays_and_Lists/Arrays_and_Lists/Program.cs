@@ -7,8 +7,8 @@ namespace Arrays_and_Lists
     {
         public static void Main(string[] args)
         {
-            ArraysAndLists.Exercise1();
-            //ArraysAndLists.Exercise2();
+            //ArraysAndLists.Exercise1();
+            ArraysAndLists.Exercise2();
             //ArraysAndLists.Exercise3();
             //ArraysAndLists.Exercise4();
             //ArraysAndLists.Exercise5();
@@ -64,10 +64,31 @@ namespace Arrays_and_Lists
         // 2- Write a program and ask the user to enter their name.Use an array to reverse the name and then store the result in
         // a new string. Display the reversed name on the console.
 
-        //public static void Exercise2()
-        //{
+        public static void Exercise2()
+        {
+            Console.WriteLine("Please enter your name: ");
+            var name = Console.ReadLine();
+            var array = new char[name.Length];
 
-        //}
+            var i = 0;
+
+            while (i < name.Length)
+            {
+                array[i] = name[i];
+                i++;
+            }
+
+            Array.Reverse(array);
+
+            var reversed = "";
+
+            foreach(var ch in array)
+            {
+                reversed += ch;
+            }
+
+            Console.WriteLine("Here is your name reversed: " + reversed);
+        }
 
         // 3- Write a program and ask the user to enter 5 numbers.If a number has been previously entered, display an error message
         // and ask the user to re-try. Once the user successfully enters 5 unique numbers, sort them and display the result on the
