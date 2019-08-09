@@ -1,0 +1,6 @@
+/Users/seanykiki/Desktop/Insightly/C#/Udemy_C#_basics_excercises/Arrays_and_Lists/Arrays_and_Lists/bin/Debug/Arrays_and_Lists.exe
+/Users/seanykiki/Desktop/Insightly/C#/Udemy_C#_basics_excercises/Arrays_and_Lists/Arrays_and_Lists/bin/Debug/Arrays_and_Lists.pdb
+/Users/seanykiki/Desktop/Insightly/C#/Udemy_C#_basics_excercises/Arrays_and_Lists/Arrays_and_Lists/obj/x86/Debug/Arrays_and_Lists.csprojAssemblyReference.cache
+/Users/seanykiki/Desktop/Insightly/C#/Udemy_C#_basics_excercises/Arrays_and_Lists/Arrays_and_Lists/obj/x86/Debug/Arrays_and_Lists.csproj.CoreCompileInputs.cache
+/Users/seanykiki/Desktop/Insightly/C#/Udemy_C#_basics_excercises/Arrays_and_Lists/Arrays_and_Lists/obj/x86/Debug/Arrays_and_Lists.exe
+/Users/seanykiki/Desktop/Insightly/C#/Udemy_C#_basics_excercises/Arrays_and_Lists/Arrays_and_Lists/obj/x86/Debug/Arrays_and_Lists.pdb
