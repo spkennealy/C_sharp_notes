@@ -20,7 +20,7 @@ namespace Arrays_and_Lists
         // If no one likes your post, it doesn't display anything.
         // If only one person likes your post, it displays: [Friend's Name] likes your post.
         // If two people like your post, it displays: [Friend 1] and[Friend 2] like your post.
-        // If more than two people like your post, it displays: [Friend 1], [Friend 2] and[Number of Other People] others like
+        // If more than two people like your post, it displays: [Friend 1], [Friend 2] and[Number of Other People] others liked
         // your post.
 
         // Write a program and continuously ask the user to enter different names, until the user presses Enter (without supplying
@@ -42,17 +42,21 @@ namespace Arrays_and_Lists
 
                 names.Add(name);
 
-                if (names.Count == 1)
+                if (names.Count > 2)
                 {
-                    Console.WriteLine("Names: " + names[0]);
+                    Console.WriteLine("{0}, {1} and {2} others liked your post.", names[0], names[1], names.Count - 2);
                 }
                 else if (names.Count == 2)
                 {
-                    Console.WriteLine("Names: " + names[0] + ", " + names[1]);
+                    Console.WriteLine("{0} and {1} liked your post.", names[0], names[1]);
                 }
-                else if (names.Count > 2)
+                else if (names.Count == 1)
                 {
-                    Console.WriteLine("Names: " + names[0] + ", " + names[1] + ", and " + (names.Count - 2) + "others");
+                    Console.WriteLine(names[0] + " liked your post.");
+                }
+                else
+                {
+                    Console.WriteLine();
                 }
             }
         }
