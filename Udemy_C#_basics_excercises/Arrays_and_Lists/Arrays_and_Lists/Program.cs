@@ -11,8 +11,8 @@ namespace Arrays_and_Lists
             //ArraysAndLists.Exercise1();
             //ArraysAndLists.Exercise2();
             //ArraysAndLists.Exercise3();
-            ArraysAndLists.Exercise4();
-            //ArraysAndLists.Exercise5();
+            //ArraysAndLists.Exercise4();
+            ArraysAndLists.Exercise5();
         }
 
         // 1 - When you post a message on Facebook, depending on the number of people who like your post, Facebook displays
@@ -144,11 +144,40 @@ namespace Arrays_and_Lists
 
         // 5- Write a program and ask the user to supply a list of comma separated numbers (e.g 5, 1, 9, 2, 10). If the list is
         // empty or includes less than 5 numbers, display "Invalid List" and ask the user to re-try; otherwise, display the 3
-        //  smallest numbers in the list.
+        // smallest numbers in the list.
 
-        //public static void Exercise5()
-        //{
+        public static void Exercise5()
+        {
+            string[] elements;
 
-        //}
+            while (true)
+            {
+                Console.WriteLine("Please enter at least 5 numbers separated by a comma (ex: 5, 1, 9, 2, 10): ");
+                var input = Console.ReadLine();
+
+                if (!String.IsNullOrWhiteSpace(input))
+                {
+                    elements = input.Split(',');
+                    if (elements.Length > 4)
+                        break;
+                }
+
+                Console.WriteLine("Invalid list, please try again.");
+            }
+
+            var numbers = new List<int>();
+            foreach (var num in elements)
+                numbers.Add(Convert.ToInt32(num));
+
+            numbers.Sort();
+
+            Console.WriteLine("The 3 smallest numbers are: ");
+            var i = 0;
+            while (i < 3)
+            {
+                Console.WriteLine(numbers[i]);
+                i++;
+            }
+        }
     }
 }
