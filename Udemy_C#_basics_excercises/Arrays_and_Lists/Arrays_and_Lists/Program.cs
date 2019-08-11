@@ -10,8 +10,8 @@ namespace Arrays_and_Lists
         {
             //ArraysAndLists.Exercise1();
             //ArraysAndLists.Exercise2();
-            ArraysAndLists.Exercise3();
-            //ArraysAndLists.Exercise4();
+            //ArraysAndLists.Exercise3();
+            ArraysAndLists.Exercise4();
             //ArraysAndLists.Exercise5();
         }
 
@@ -116,12 +116,31 @@ namespace Arrays_and_Lists
         }
 
         // 4- Write a program and ask the user to continuously enter a number or type "Quit" to exit. The list of numbers may
-        // include duplicates.Display the unique numbers that the user has entered.
+        // include duplicates. Display the unique numbers that the user has entered.
 
-        //public static void Exercise4()
-        //{
+        public static void Exercise4()
+        {
+            var nums = new List<int>();
 
-        //}
+            while(true)
+            {
+                Console.WriteLine("Please enter a number: ");
+                var input = Console.ReadLine();
+                if (input.ToLower() == "quit")
+                    break;
+
+                var num = Convert.ToInt32(input);
+
+                if (!nums.Contains(num))
+                    nums.Add(num);
+
+                Console.WriteLine("Unique nums: ");
+                foreach(var n in nums)
+                {
+                    Console.WriteLine(n);
+                }
+            }
+        }
 
         // 5- Write a program and ask the user to supply a list of comma separated numbers (e.g 5, 1, 9, 2, 10). If the list is
         // empty or includes less than 5 numbers, display "Invalid List" and ask the user to re-try; otherwise, display the 3
