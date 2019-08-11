@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{90F40B4B-1177-403A-B5A0-629FFA7DCF85}|Default">
-  <MonoDevelop.Ide.ItemProperties.Arrays__and__Lists FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Arrays__and__Lists PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Arrays_and_Lists/Program.cs">
     <Files>
-      <File FileName="Arrays_and_Lists/Program.cs" Line="31" Column="16" />
+      <File FileName="Arrays_and_Lists/Program.cs" Line="104" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

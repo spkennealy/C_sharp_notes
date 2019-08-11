@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Arrays_and_Lists
 {
@@ -8,8 +9,8 @@ namespace Arrays_and_Lists
         public static void Main(string[] args)
         {
             //ArraysAndLists.Exercise1();
-            ArraysAndLists.Exercise2();
-            //ArraysAndLists.Exercise3();
+            //ArraysAndLists.Exercise2();
+            ArraysAndLists.Exercise3();
             //ArraysAndLists.Exercise4();
             //ArraysAndLists.Exercise5();
         }
@@ -80,12 +81,7 @@ namespace Arrays_and_Lists
 
             Array.Reverse(array);
 
-            var reversed = "";
-
-            foreach(var ch in array)
-            {
-                reversed += ch;
-            }
+            var reversed = new String(array);
 
             Console.WriteLine("Here is your name reversed: " + reversed);
         }
@@ -94,10 +90,30 @@ namespace Arrays_and_Lists
         // and ask the user to re-try. Once the user successfully enters 5 unique numbers, sort them and display the result on the
         // console.
 
-        //public static void Exercise3()
-        //{
+        public static void Exercise3()
+        {
+            var nums = new List<int>();
 
-        //}
+            while (nums.Count < 5)
+            {
+                Console.WriteLine("Please enter a number: ");
+                var num = Convert.ToInt32(Console.ReadLine());
+
+                if (nums.Contains(num))
+                {
+                    Console.WriteLine("You've already entered that number, please try again.");
+                    continue;
+                }
+
+                nums.Add(num);
+            }
+
+            nums.Sort();
+            foreach(var n in nums)
+            { 
+                Console.WriteLine(n);
+            }
+        }
 
         // 4- Write a program and ask the user to continuously enter a number or type "Quit" to exit. The list of numbers may
         // include duplicates.Display the unique numbers that the user has entered.
