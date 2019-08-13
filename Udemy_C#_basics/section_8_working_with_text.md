@@ -56,3 +56,32 @@ string s = i.ToString(); // "1234"
 string t = i.ToString("C"); // "$1,234.00"  C is short for currency
 string t = i.ToString("C0") // "$1,234"  0 says no decimals, 1 would have 1 decimal
 ```
+
+### **StringBuilder**
+
+* Defined in System.Text
+* A mutable string
+* Easy and fast to create and manipulate strings
+
+```csharp
+using System.Text;
+
+namespace CSharpFundamentals
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var builder = new StringBuilder(); // you can pass in a string argument to start the builder with
+            builder.Append('-', 10) // many different overloads (aka arguements)
+            builder.AppendLine(); // adds a line break
+
+            builder.Replace('-', '+'); // replaces all dashes with the plus sign
+            builder.Remove(0, 10); // removes 10 characters starting from index 0
+            builder.Insert(0, new string('-', 10)); // inserts 2nd arg (10 dashes) at index 0 (frist arg)
+
+
+        }
+    }
+}
+```
