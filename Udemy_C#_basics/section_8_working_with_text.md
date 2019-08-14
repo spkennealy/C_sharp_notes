@@ -73,14 +73,20 @@ namespace CSharpFundamentals
         static void Main(string[] args)
         {
             var builder = new StringBuilder(); // you can pass in a string argument to start the builder with
-            builder.Append('-', 10) // many different overloads (aka arguements)
+            builder.Append('-', 10); // many different overloads (aka arguements)
             builder.AppendLine(); // adds a line break
 
             builder.Replace('-', '+'); // replaces all dashes with the plus sign
             builder.Remove(0, 10); // removes 10 characters starting from index 0
             builder.Insert(0, new string('-', 10)); // inserts 2nd arg (10 dashes) at index 0 (frist arg)
 
+            builder[0] // --> "-" you can use the index to return the character
 
+            // you can also chain methods on to each other
+            var builder2 = new StringBuilder(); 
+            builder2
+                .Append('-', 10)
+                .AppendLine()
         }
     }
 }
