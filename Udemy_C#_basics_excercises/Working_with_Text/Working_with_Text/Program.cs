@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Working_with_Text
 {
@@ -9,8 +10,8 @@ namespace Working_with_Text
         {
             //Text.Exercise1();
             //Text.Exercise2();
-            Text.Exercise3();
-            //Text.Exercise4();
+            //Text.Exercise3();
+            Text.Exercise4();
             //Text.Exercise5();
         }
 
@@ -110,15 +111,25 @@ namespace Working_with_Text
             Console.WriteLine("OK");
         }
 
-        // 4- Write a program and ask the user to enter a few words separated by a space.Use the words to create a
-        // variable name with PascalCase.For example, if the user types: "number of students", display "NumberOfStudents".
-        // Make sure that the program is not dependent on the input.So, if the user types "NUMBER OF STUDENTS", the
+        // 4- Write a program and ask the user to enter a few words separated by a space. Use the words to create a
+        // variable name with PascalCase. For example, if the user types: "number of students", display "NumberOfStudents".
+        // Make sure that the program is not dependent on the input. So, if the user types "NUMBER OF STUDENTS", the
         // program should still display "NumberOfStudents".
 
-        //public static void Exercise4()
-        //{
+        public static void Exercise4()
+        {
+            Console.WriteLine("Please enter a few words separated by a space (ex. number of students): ");
+            var input = Console.ReadLine().ToLower().Split(' ');
+            var pascalCase = new StringBuilder();
 
-        //}
+            foreach (var word in input)
+            {
+                var capitalized = char.ToUpper(word[0]) + word.Substring(1);
+                pascalCase.Append(capitalized);
+            }
+
+            Console.WriteLine(pascalCase);
+        }
 
         // 5- Write a program and ask the user to enter an English word. Count the number of vowels (a, e, o, u, i)
         // in the word. So, if the user enters "inadequate", the program should display 6 on the console.
