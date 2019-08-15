@@ -7,8 +7,8 @@ namespace Working_with_Text
     {
         public static void Main(string[] args)
         {
-            Text.Exercise1();
-            //Text.Exercise2();
+            //Text.Exercise1();
+            Text.Exercise2();
             //Text.Exercise3();
             //Text.Exercise4();
             //Text.Exercise5();
@@ -47,14 +47,39 @@ namespace Working_with_Text
             Console.WriteLine(message);
         }
 
-        // 2- Write a program and ask the user to enter a few numbers separated by a hyphen.If the user simply presses
-        // Enter, without supplying an input, exit immediately; otherwise, check to see if there are duplicates.If so,
+        // 2- Write a program and ask the user to enter a few numbers separated by a hyphen. If the user simply presses
+        // Enter, without supplying an input, exit immediately; otherwise, check to see if there are duplicates. If so,
         // display "Duplicate" on the console.
 
-        //public static void Exercise2()
-        //{
+        public static void Exercise2()
+        {
+            Console.WriteLine("Please enter a few numbers separated by a hyphen (ex. 5-6-5-7-2): ");
+            var input = Console.ReadLine();
 
-        //}
+            if (String.IsNullOrEmpty(input))
+            {
+                return;
+            }
+
+            var hasDuplicates = false;
+            var nums = new List<int>();
+
+            foreach (var num in input.Split('-'))
+            {
+                var convertedNum = Convert.ToInt32(num);
+                if (!nums.Contains(convertedNum))
+                {
+                    nums.Add(convertedNum);
+                } else
+                {
+                    hasDuplicates = true;
+                    break;
+                }
+            }
+
+            var message = hasDuplicates ? "Duplicate" : "No Duplicates";
+            Console.WriteLine(message);
+        }
 
         // 3- Write a program and ask the user to enter a time value in the 24-hour time format(e.g. 19:00). A valid
         // time should be between 00:00 and 23:59. If the time is valid, display "Ok"; otherwise, display "Invalid Time".
