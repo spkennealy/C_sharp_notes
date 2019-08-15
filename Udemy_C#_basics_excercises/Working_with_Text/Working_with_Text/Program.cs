@@ -8,8 +8,8 @@ namespace Working_with_Text
         public static void Main(string[] args)
         {
             //Text.Exercise1();
-            Text.Exercise2();
-            //Text.Exercise3();
+            //Text.Exercise2();
+            Text.Exercise3();
             //Text.Exercise4();
             //Text.Exercise5();
         }
@@ -85,10 +85,30 @@ namespace Working_with_Text
         // time should be between 00:00 and 23:59. If the time is valid, display "Ok"; otherwise, display "Invalid Time".
         // If the user doesn't provide any values, consider it as invalid time. 
 
-        //public static void Exercise3()
-        //{
+        public static void Exercise3()
+        {
+            Console.WriteLine("Please enter a time value in the 24-hour format (ex. 19:00 or 06:00): ");
+            var input = Console.ReadLine().Split(':');
 
-        //}
+            if (input.Length != 2)
+            {
+                Console.WriteLine("Invalid Time");
+                return;
+            }
+            else
+            {
+                var hours = Convert.ToInt32(input[0]);
+                var minutes = Convert.ToInt32(input[1]);
+
+                if (hours < 0 || hours > 23 || minutes < 0 || minutes > 59)
+                {
+                    Console.WriteLine("Invalid Time");
+                    return;
+                }
+            }
+
+            Console.WriteLine("OK");
+        }
 
         // 4- Write a program and ask the user to enter a few words separated by a space.Use the words to create a
         // variable name with PascalCase.For example, if the user types: "number of students", display "NumberOfStudents".
