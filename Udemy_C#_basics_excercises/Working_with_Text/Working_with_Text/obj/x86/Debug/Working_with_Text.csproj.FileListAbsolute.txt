@@ -1,0 +1,6 @@
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_basics_excercises/Working_with_Text/Working_with_Text/obj/x86/Debug/Working_with_Text.csprojAssemblyReference.cache
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_basics_excercises/Working_with_Text/Working_with_Text/obj/x86/Debug/Working_with_Text.csproj.CoreCompileInputs.cache
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_basics_excercises/Working_with_Text/Working_with_Text/bin/Debug/Working_with_Text.exe
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_basics_excercises/Working_with_Text/Working_with_Text/bin/Debug/Working_with_Text.pdb
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_basics_excercises/Working_with_Text/Working_with_Text/obj/x86/Debug/Working_with_Text.exe
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_basics_excercises/Working_with_Text/Working_with_Text/obj/x86/Debug/Working_with_Text.pdb
