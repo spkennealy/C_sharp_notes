@@ -11,8 +11,8 @@ namespace Working_with_Text
             //Text.Exercise1();
             //Text.Exercise2();
             //Text.Exercise3();
-            Text.Exercise4();
-            //Text.Exercise5();
+            //Text.Exercise4();
+            Text.Exercise5();
         }
 
 
@@ -134,10 +134,23 @@ namespace Working_with_Text
         // 5- Write a program and ask the user to enter an English word. Count the number of vowels (a, e, o, u, i)
         // in the word. So, if the user enters "inadequate", the program should display 6 on the console.
 
-        //public static void Exercise5()
-        //{
+        public static void Exercise5()
+        {
+            Console.WriteLine("Please enter one English word: ");
+            var input = Console.ReadLine().ToLower();
+            var vowels = new List<char>() { 'a', 'e', 'i', 'o', 'u' };
+            var vowelCount = 0;
 
-        //}
+            foreach (var ch in input)
+            {
+                if (vowels.Contains(ch))
+                {
+                    vowelCount += 1;
+                }
+            }
+
+            Console.Write("The total vowels in that word is " + vowelCount);
+        }
 
     }
 }
