@@ -71,4 +71,31 @@ namespace CSharpFundamentals
         }
     }
 }
+
+### **Directory & DirectoryInfo Demo**
+```csharp
+using System.IO;
+
+namespace CSharpFundamentals
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var path = @"c:\temp\folder1";
+
+            Directory.CreateDirectory(path); 
+            var files = Directory.GetFiles(path, "*.*", SearchOptions.AllDirectories); // 1. path, 2. search pattern (example is all files), 3. search options
+            // returns all files in a string
+
+            var directories = Directory.GetDirectories(path, "*.*", SearchOptions.AllDirectores); // same arguements as above
+
+            Directory.Exists(path); 
+
+            var directoryInfo = new DirectoryInfo("..");
+            directoryInfo.GetFiles();
+            directoryInfo.GetDirectories();
+        }
+    }
+}
 ```
