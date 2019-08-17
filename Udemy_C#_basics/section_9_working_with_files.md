@@ -35,3 +35,40 @@
         * GetFileName()
         * GetExtension()
         * GetTempPath()
+
+### **File & FileInfo Demo**
+```csharp
+using System.IO;
+
+namespace CSharpFundamentals
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // the @ symbol allows you to not have to espace the \
+            File.Copy(@"c:\Desktop\tempfile.png", @"d:\tempfile.png", true); // first arg is source file, second arg is the destination, third arg is a boolean if the file exists there you can overwrite it
+
+            File.Delete(@"c:\path"); 
+
+            if (File.Exists(@"c:\path"))
+            {
+                // ...
+            }
+
+            var content = File.ReadAllText(@"c:\path"); // will be a string of all the content
+
+            var path = @"c:\path";
+
+            // FileInfo uses instance methods
+            var fileInfo = new FileInfo(path);
+            fileInfo.CopyTo("...");
+            fileInfo.Delet(); // no parameters
+            if (fileInfo.Exists())
+            {
+                // ...
+            }
+        }
+    }
+}
+```
