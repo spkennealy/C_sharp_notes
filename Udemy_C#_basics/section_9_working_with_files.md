@@ -99,3 +99,27 @@ namespace CSharpFundamentals
     }
 }
 ```
+
+### **Path Demo**
+```csharp
+using System.IO;
+
+namespace CSharpFundamentals
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var path = @"c:\Projects\CSharpFundamentals\HelloWorld\HelloWorld.sln";
+
+            var dotIndex = path.IndexOf('.');
+            var extension = path.SubString(dotIndex);
+
+            Path.GetExtension(path); // will do the same as above
+            Path.GetFileName(path); 
+            Path.GetFileNameWithoutExtension(path); 
+            Path.GetDirectoryName(path); 
+        }
+    }
+}
+```
