@@ -1,0 +1,6 @@
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_basics_excercises/Working_with_Files/Working_with_Files/bin/Debug/Working_with_Files.exe
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_basics_excercises/Working_with_Files/Working_with_Files/bin/Debug/Working_with_Files.pdb
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_basics_excercises/Working_with_Files/Working_with_Files/obj/x86/Debug/Working_with_Files.csprojAssemblyReference.cache
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_basics_excercises/Working_with_Files/Working_with_Files/obj/x86/Debug/Working_with_Files.csproj.CoreCompileInputs.cache
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_basics_excercises/Working_with_Files/Working_with_Files/obj/x86/Debug/Working_with_Files.exe
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_basics_excercises/Working_with_Files/Working_with_Files/obj/x86/Debug/Working_with_Files.pdb
