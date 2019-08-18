@@ -21,3 +21,9 @@ The watch window will allow you to watch the variables as you step through the c
 
 Side effects can come when manipulating the arguments passed into a method. It's best to make a copy of the data when manipulting it.
 
+### **Defensive Programming**
+
+Check the input first before doing any processing, so you can catch any input errors.
+
+A good programmer will think of edge cases.
+
