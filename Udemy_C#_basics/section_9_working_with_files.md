@@ -1,4 +1,4 @@
-## **Section 9: Working with Files***
+## **Section 9: Working with Files**
 
 ### **System.IO Namespace**
 

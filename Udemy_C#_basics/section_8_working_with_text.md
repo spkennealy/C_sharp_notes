@@ -1,4 +1,4 @@
-## **Section 8: Working with Text***
+## **Section 8: Working with Text**
 
 ### **Strings**
 
