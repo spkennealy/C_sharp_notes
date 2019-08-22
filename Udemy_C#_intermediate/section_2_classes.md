@@ -247,3 +247,65 @@ myClass.MyMethod(out a);
 ```
 
 `out` will allow a value to be returned. This is again not an ideal way to write code.
+
+### **Fields**
+
+**Initialization:**
+```csharp
+public class Customer
+{
+    List<Order> Orders = new List<Order>();
+}
+```
+
+**Read-only Fields:**
+```csharp
+public class Customer
+{
+    readonly List<Order> Orders = new List<Order>();
+}
+```
+
+**Example:**
+```csharp
+namespace Fields
+{
+    public class Customer 
+    {
+        public int Id;
+        public string Name;
+        public readonly List<Order> Orders = new List<Order>(); // adding readonly will not allow Promote to reinitialize a new List.
+
+        public Customer(int id)
+        {
+            this.Id = id;
+        }
+
+        public Customer(int id, string name)
+            : this(id)
+        {
+            this.Name = name;
+        }
+
+        public void Promote()
+        {
+            Orders = new List<Order>();
+        }
+    }
+
+    // this can be in a separate file
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var customer = new Customer(1);
+            customer.Orders.Add(new Order());
+            customer.Orders.Add(new Order());
+
+            customer.Promote(); // this will reinitialize the orders field
+
+            Console.WriteLine(customer.Orders.Count); // will return 2 if the Promote() method was not called
+        }
+    }
+}
+```
