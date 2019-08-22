@@ -188,3 +188,62 @@ public class Point
     public void Move(Point newLocation, int speed) {}
 }
 ```
+
+**The Params Modifier**
+```csharp
+public class Calculator
+{
+    public int Add(params int[] numbers) {}
+}
+
+var result = calculator.Add(new int[]{ 1, 2, 3, 4 });
+var result = calculator.Add(1, 2, 3, 4); // this is easier, but must be used with `params`
+```
+* This will help with a method that has a varying number of parameters.
+
+**The Ref Modifier**
+```csharp
+public class MyClass
+{
+    public void MyMethod(int a)
+    {
+        a += 2;
+    }
+}
+
+var a = 1;
+myClass.MyMethod(a); // this will return 1
+```
+
+You can use the ref modifier so that the a that is passed in to `MyMethod` is not a copy, but a reference.
+
+```csharp
+public class Weirdo
+{
+    public void DoAWeirdThing(ref int a)
+    {
+        a += 2;
+    }
+}
+
+var a = 1;
+weirdo.DoAWeirdThing(ref a); 
+```
+
+This is not an ideal thing to use, but it is available.
+
+**The Out Modifier**
+```csharp
+public class MyClass
+{
+    public void MyMethod(out int result)
+    {
+        resutl = `;
+    }
+}
+
+int a;
+myClass.MyMethod(out a); 
+```
+
+`out` will allow a value to be returned. This is again not an ideal way to write code.
