@@ -152,3 +152,14 @@ public class Customer
 ```
 
 `: this(name)` will call the other `Customer(string name)` before calling the one with 2 parameters.
+
+### **Object Initializers**
+
+A syntax for quickly initialising an object without the need to call one of its constructors. This will avoid creating multiple constructors.
+```csharp
+var person = new Person 
+                {
+                    FirstName = "Sean",
+                    LastName = "Kennealy"
+                }
+```
