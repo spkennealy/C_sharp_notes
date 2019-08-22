@@ -163,3 +163,28 @@ var person = new Person
                     LastName = "Kennealy"
                 }
 ```
+
+### **Methods**
+
+**Signature of Methods**
+* Name
+* Number and type of parameters
+```csharp
+public class Point
+{
+    public void Move(int x, int y) {}
+}
+```
+
+**Method Overloading**
+* Having a method with the same name but different signatures
+```csharp
+public class Point
+{
+    public void Move(int x, int y) {}
+
+    public void Move(Point newLocation) {}
+
+    public void Move(Point newLocation, int speed) {}
+}
+```
