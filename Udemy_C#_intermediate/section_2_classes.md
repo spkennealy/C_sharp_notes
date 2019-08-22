@@ -1,6 +1,8 @@
 ## **Section 2: Classes**
 
-### **What is a class?**
+### **Intro to Classes**
+
+**What is a class?**
 
 * A building block of an application.
 * An application will consists of multiple classes that control a certain behavior of the application.
@@ -39,7 +41,7 @@ person.Name = "Mosh";
 person.Introduce();
 ```
 
-### **Class Members**
+**Class Members**
 
 * Instance: accessible from an object
 ```csharp
@@ -101,3 +103,52 @@ namespace Classes
     }
 }
 ```
+
+### **Constructors**
+
+A method that is called when an instance of a class is created. We need a constructor to put an object in an early state.
+```csharp
+public class Customer
+{
+    public Customer()
+    {
+        // this is the constructor
+        // this one doesn't have any parameters
+    }
+}
+```
+
+**Example**
+```csharp
+public class Customer
+{
+    public string Name;
+
+    public Customer(string name)
+    {
+        this.Name = name;
+    }
+}
+
+var customer = new Customer("John");
+```
+
+**Constructor Overloading**
+
+Constructor overloading means having a method with the same name but different signatures. By different signatures, it means that they have different return types and/or parameters.
+```csharp
+public class Customer
+{
+    public Customer() { ... }
+
+    public Customer(string name) { ... }
+
+    public Customer(int d, string name) 
+        : this(name) 
+    { 
+        ... 
+    }
+}
+```
+
+`: this(name)` will call the other `Customer(string name)` before calling the one with 2 parameters.
