@@ -370,12 +370,12 @@ public class Person
 // Person would be in a separate class
 public class Person
 {
+    public DateTime Birthdate { get; private set; }
+
     public Person(DateTime birthdate)
     {
         Birthdate = birthdate;
     }
-
-    public DateTime Birthdate { get; private set; }
 
     public int Age
     {
@@ -398,3 +398,5 @@ class Program
     }
 }
 ```
+
+`prop` is a code snippet for `public DateTime Birthdate { get; private set; }`.
