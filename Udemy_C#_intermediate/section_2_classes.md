@@ -341,3 +341,26 @@ john.Name; // won't compile
 * define feilds as private
 * provide getter/setter methods as public
 
+### **Properties**
+
+A class member that encapsulates a getter/setter for accessing a field. 
+```csharp
+public class Person
+{
+    private DateTime _birthdate;
+
+    public DateTime Birthdate
+    {
+        get { return _birthdate; }
+        set { _birthdate = value; }
+    }
+}
+```
+
+**Auto implemented property**
+```csharp
+public class Person
+{
+    public DateTime Birthdate { get; set; }
+}
+```
