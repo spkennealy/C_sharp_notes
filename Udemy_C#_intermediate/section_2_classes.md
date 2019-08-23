@@ -309,3 +309,35 @@ namespace Fields
     }
 }
 ```
+
+### **Access Modifiers**
+
+A way to control access to a class or it's members. This creates safety in the program.
+
+* `public`
+* `private`
+* `protected`
+* `internal`
+* `protected internal`
+
+```csharp
+public class Customer
+{
+    private string Name;
+}
+
+// ...
+
+var john = new Customer();
+john.Name; // won't compile
+```
+
+**Object Oriented Programming**
+* Encapsulation/Information Hiding
+* Inheritance
+* Polymorphism
+
+**Encapsulation**
+* define feilds as private
+* provide getter/setter methods as public
+
