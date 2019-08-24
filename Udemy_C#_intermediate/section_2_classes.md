@@ -400,3 +400,35 @@ class Program
 ```
 
 `prop` is a code snippet for `public DateTime Birthdate { get; private set; }`.
+
+
+### **Indexers**
+
+A way to access elements in a class that represents a list of values. 
+
+Examples:
+```csharp
+var array = new int[5];
+array[0] = 1;
+
+var list = new List<int>();
+list[0] = 1;
+
+var cookie = new HttpCookie();
+cookie.Expire = DateTime.Today.AddDays(5);
+
+cookie["name"] = "Sean";
+cookie.SetItem("name", "Sean");
+
+var name = cookie["name"];
+var name = cookie.GetItem("name");
+
+public class HttpCookie
+{
+    public string this[string key]
+    {
+        get { ... }
+        set { ... }
+    }
+}
+```
