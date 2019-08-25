@@ -1,0 +1,6 @@
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_intermediate_exercises/StopWatch/StopWatch/bin/Debug/StopWatch.exe
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_intermediate_exercises/StopWatch/StopWatch/bin/Debug/StopWatch.pdb
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_intermediate_exercises/StopWatch/StopWatch/obj/x86/Debug/StopWatch.csprojAssemblyReference.cache
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_intermediate_exercises/StopWatch/StopWatch/obj/x86/Debug/StopWatch.csproj.CoreCompileInputs.cache
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_intermediate_exercises/StopWatch/StopWatch/obj/x86/Debug/StopWatch.exe
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_intermediate_exercises/StopWatch/StopWatch/obj/x86/Debug/StopWatch.pdb
