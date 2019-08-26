@@ -7,6 +7,7 @@ namespace StopWatch
         public static void Main(string[] args)
         {
             var stopWatch = new StopWatch();
+            stopWatch.Start();
         }
     }
 }

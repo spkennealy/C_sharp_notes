@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+
 namespace StopWatch
 {
     public class StopWatch
@@ -11,21 +13,75 @@ namespace StopWatch
         // We should not be able to start a stopwatch twice in a row (because that may overwrite the initial start time). So the
         // class should throw an InvalidOperationException if its started twice.
 
-        private TimeSpan duration = new TimeSpan();
+        private DateTime start;
+        private DateTime end;
+        private TimeSpan duration;
+        private bool _isRunning;
 
         public StopWatch()
         {
-            Console.WriteLine(duration);
+            {
+                Console.WriteLine("Type 'start' to start the stopwatch, type 'stop' to stop it, type 'reset' to start over, and type 'end' to exit: ");
+                var input = Console.ReadLine();
+
+                while (input.Length > 0)
+                {
+                    if (input == "start")
+                    {
+                        Start();
+                    }
+                    else if (input == "stop")
+                    {
+                        Stop();
+                    }
+                    else if (input == "end")
+                    {
+                        break;
+                    }
+                    else if (input == "reset")
+                    {
+                        duration = new TimeSpan();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid command, please try again: ");
+                    }
+                    
+                    input = Console.ReadLine();
+                }
+            }
         }
 
         public void Start()
         {
+            if (_isRunning)
+                throw new InvalidOperationException("Stopwatch is already running");
 
+            _isRunning = true;
+
+            start = DateTime.Now;
         }
 
         public void Stop()
         {
+            if (!_isRunning)
+                throw new InvalidOperationException("Stopwatch hasn't started");
 
+            _isRunning = false;
+
+            end = DateTime.Now;
+
+            if (duration.Equals(0))
+            {
+                duration = end - start;
+            }
+            else
+            {
+                duration += end - start;
+            }
+            
+
+            Console.WriteLine(duration);
         }
     }
 }
