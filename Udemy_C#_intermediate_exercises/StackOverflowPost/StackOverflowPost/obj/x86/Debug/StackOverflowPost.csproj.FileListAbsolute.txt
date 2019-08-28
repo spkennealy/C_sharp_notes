@@ -1,0 +1,6 @@
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_intermediate_exercises/StackOverflowPost/StackOverflowPost/bin/Debug/StackOverflowPost.exe
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_intermediate_exercises/StackOverflowPost/StackOverflowPost/bin/Debug/StackOverflowPost.pdb
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_intermediate_exercises/StackOverflowPost/StackOverflowPost/obj/x86/Debug/StackOverflowPost.csprojAssemblyReference.cache
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_intermediate_exercises/StackOverflowPost/StackOverflowPost/obj/x86/Debug/StackOverflowPost.csproj.CoreCompileInputs.cache
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_intermediate_exercises/StackOverflowPost/StackOverflowPost/obj/x86/Debug/StackOverflowPost.exe
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_C#_intermediate_exercises/StackOverflowPost/StackOverflowPost/obj/x86/Debug/StackOverflowPost.pdb

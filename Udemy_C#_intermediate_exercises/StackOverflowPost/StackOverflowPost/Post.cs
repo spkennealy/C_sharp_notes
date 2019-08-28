@@ -31,9 +31,9 @@ namespace StackOverflowPost
             voteValue--;
         }
 
-        public void CurrentValue()
+        public int CurrentValue()
         {
-            Console.WriteLine("Vote value: " + voteValue);
+            return voteValue;
         }
     }
 }
