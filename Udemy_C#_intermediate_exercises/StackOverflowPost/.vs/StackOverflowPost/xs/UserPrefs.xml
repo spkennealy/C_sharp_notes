@@ -1,16 +1,16 @@
 ﻿<Properties StartupConfiguration="{13071A12-F0ED-42CD-B18F-3CDA8441345B}|Default">
-  <MonoDevelop.Ide.ItemProperties.StackOverflowPost FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="StackOverflowPost/Post.cs">
+  <MonoDevelop.Ide.ItemProperties.StackOverflowPost PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="StackOverflowPost/Program.cs">
     <Files>
-      <File FileName="StackOverflowPost/Program.cs" Line="9" Column="13" />
-      <File FileName="StackOverflowPost/Post.cs" Line="12" Column="17" />
+      <File FileName="StackOverflowPost/Program.cs" Line="23" Column="29" />
+      <File FileName="StackOverflowPost/Post.cs" Line="36" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="StackOverflowPost" expanded="True">
             <Node name="StackOverflowPost" expanded="True">
-              <Node name="Post.cs" selected="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
