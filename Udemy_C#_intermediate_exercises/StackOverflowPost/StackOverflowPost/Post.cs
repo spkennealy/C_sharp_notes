@@ -11,17 +11,29 @@ namespace StackOverflowPost
         private string Title;
         private string Description;
         private DateTime DateCreated;
+        private int voteValue;
 
         public Post(string title, string description, DateTime currentTime)
         {
             Title = title;
             Description = description;
             DateCreated = currentTime;
+            voteValue = 0;
         }
 
-        public void Upvote()
+        public void UpVote()
         {
+            voteValue++;
+        }
 
+        public void DownVote()
+        {
+            voteValue--;
+        }
+
+        public void CurrentValue()
+        {
+            Console.WriteLine("Vote value: " + voteValue);
         }
     }
 }
