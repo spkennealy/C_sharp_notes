@@ -35,3 +35,91 @@ public class Text : PresentationObject
     // Code specifice to text
 }
 ```
+
+### **Composition**
+
+* A kind of relationship between two classes that allows one to contain the other.
+* Has-A relationship
+* Example: Car has an engine
+
+Benefits:
+* Code reuse
+* Flexibility
+* A means to loose-coupling
+
+Example:
+* DbMigrator requires logging.
+* Installer requires logging.
+```csharp
+public class Installer
+{
+    private Logger _logger;
+
+    public Installer(Logger logger)
+    {
+        _logger = logger;
+    }
+}
+```
+
+**Demo**
+```csharp
+namespace Composition
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var dbMigrator = new DbMigrator(new Logger());
+
+            var logger = new Logger();
+            var installer = new Installer(logger);
+
+            dbMigrator.Migrate();
+
+            installer.Install();
+        }
+    }
+
+    // separate file Logger.cs
+    public class Logger
+    {
+        public void Log(string message)
+        {
+            Console.WriteLine(message);
+        }
+    }
+
+    // separate file DbMigrator.cs
+    public class DbMigrator
+    {
+        private readonly Logger _logger;
+
+        public DbMigrator(Logger logger)
+        {
+            _logger = logger;
+        }
+
+        public void Migrate()
+        {
+            _logger.Log("We are migrating...");
+        }
+    }
+
+    // separate file Installer.cs
+    public class Installer
+    {
+        private readonly Logger _logger;
+
+        public Installer(Logger logger)
+        {
+            _logger = logger;
+        }
+
+        public void Install()
+        {
+            _logger.Log("We are installing...");
+        }
+    }
+}
+```
