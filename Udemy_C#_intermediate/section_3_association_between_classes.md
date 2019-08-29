@@ -123,3 +123,16 @@ namespace Composition
     }
 }
 ```
+
+### **Favor Composition over Inheritance**
+
+**Problems with Inheritance**
+* Easily abused by amateur designers/developers
+* Large hierarchies
+* Fragility
+* Tightly coupling
+
+**Composition**
+* Any inheritance can be converted to composition
+* Great flexibility
+* Eventually loose couppling
