@@ -13,3 +13,25 @@ To be a good programmer, you need to understand:
 * Inheritance
 * Composition
 
+### **Inheritance**
+
+* A kind of relationship between two classes that allows one to inherit code from the other.
+* Is-A
+* Example: A car is a vechile
+
+Benefits:
+* Code resuse
+* Polymorphic behavior
+
+**Syntax**
+```csharp
+public class PresentationObject
+{
+    // Common shared code
+}
+
+public class Text : PresentationObject
+{
+    // Code specifice to text
+}
+```
