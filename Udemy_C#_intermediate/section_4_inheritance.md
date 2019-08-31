@@ -68,3 +68,49 @@ namespace AccessModifiers
     }
 }
 ```
+
+```csharp
+// if we moved the Customer class into the Amazon namespace and removed it from the AccessModifier namespace above.
+
+using Amazon;
+// Program.cs
+namespace AccessModifiers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var customer = new Customer(); // this will not work unless we add a reference and add the Using statement above
+            Amazon.RateCalculator calculator = new RateCalculator(); // this will not work because it's in a different assembly
+        }
+    }
+}
+
+namespace Amazon
+{
+    // RateCalculator.cs
+    internal class RateCalculator
+    {
+        public int Calculate(Customer customer)
+        {
+            // any code here
+        }
+    }
+
+    // Customer.cs
+    public class Customer
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+
+        public void Promote()
+        {
+            var calculator = new RateCalculator(); // this is not great for encapsulation
+            var rating = calculator.Calculate(this);
+
+            Console.WriteLine("Promote logic changed");
+
+        }
+    }
+}
+```
