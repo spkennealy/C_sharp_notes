@@ -146,3 +146,7 @@ public class Car : Vehicle
     }
 }
 ```
+
+### **Upcasting & Downcasting**
+* Upcasting is a conversion of a derived class to a base class
+* Downcasting is a conversion of a base class to a derived class
