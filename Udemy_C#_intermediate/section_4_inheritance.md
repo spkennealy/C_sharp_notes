@@ -114,3 +114,35 @@ namespace Amazon
     }
 }
 ```
+
+### **Constructors & Inheritance**
+
+**Constructor Inheritance**
+* Base class constructors are always executed first
+* Base class constructors are not inherited
+
+Example:
+```csharp
+public class Vehicle
+{
+    private string _registrationNumber;
+
+    public Vehicle(string registrationNumber)
+    {
+        _registrationNumber = registrationNumber;
+    }
+}
+
+public class Car : Vehicle
+{
+    public Car(string registrationNumber)
+        : base(registrationNumber) 
+    {
+        // calling `: base(_egistrationNumber)` will pass the argument to the base class constructor
+
+        _registrationNumber = registrationNumber; // this will not work because the _registrationNumber is private
+
+        // Anything here should be initializing fields specific to the car class
+    }
+}
+```
