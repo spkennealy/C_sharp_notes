@@ -150,3 +150,40 @@ public class Car : Vehicle
 ### **Upcasting & Downcasting**
 * Upcasting is a conversion of a derived class to a base class
 * Downcasting is a conversion of a base class to a derived class
+```csharp
+public class Shape { }
+public class Circle : Shape { }
+
+Circle circle = new Circle();
+Shape shape = circle; // upcasting
+
+Circle anotherCircle = (Circle)shape; // downcasting, this works because the `shape` object is pointing to a Circle object at runtime
+Car car = (Car)shape; // this will not compile, InvalidCastException, because they are not related
+```
+
+**The `as` keyword**
+```csharp
+Car car = (Car)obj;
+
+Car car = obj as Car;
+if (car != null)
+{
+    // ...
+}
+```
+* Using the `as` keyword, will not throw an exception if the casting cannot work. Instead it will return null.
+
+**The `is` keyword**
+```csharp
+if (obj is Car)
+{
+    Car car = (Car)obj;
+    // ...
+}
+```
+* Using the `is` keyword, 
+
+**Demo**
+```csharp
+
+```
