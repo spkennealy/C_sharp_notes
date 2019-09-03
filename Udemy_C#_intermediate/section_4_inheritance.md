@@ -185,5 +185,50 @@ if (obj is Car)
 
 **Demo**
 ```csharp
+namespace Casting
+{
+    // Shape.cs
+    public class Shape
+    {
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        
+        public void Draw()
+        {
 
+        }
+    }
+
+    // Text.cs
+    public class Text : Shape
+    {
+        public int FontSize { get; set; }
+        public string FontName { get; set; }
+    }
+
+    // Program.cs
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Text text = new Text();
+            Shape shape = text; // this will work, text & shape point to the same spot in memory but have different views
+
+            text.Width = 400;
+            shape.Width = 100;
+            Console.WriteLine(text.width); // will equal 100
+
+            StreamReader reader = new StreamReader(new FileStream()); // or new MemoryStream();
+
+            var list1 = new ArrayList(); // will allow you to keep different types in an list
+
+            var list2 = new List<int>(); // will create a list of integers 
+
+            Shape shape = new Text();
+            Text text = (Text)shape; // this is downcasting
+        }
+    }
+}
 ```
