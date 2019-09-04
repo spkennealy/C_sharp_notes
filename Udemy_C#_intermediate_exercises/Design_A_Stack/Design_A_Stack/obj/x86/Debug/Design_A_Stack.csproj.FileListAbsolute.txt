@@ -1,0 +1,2 @@
+/Users/seanykiki/Desktop/Insightly/C#/Udemy_C#_intermediate_exercises/Design_A_Stack/Design_A_Stack/obj/x86/Debug/Design_A_Stack.csprojAssemblyReference.cache
+/Users/seanykiki/Desktop/Insightly/C#/Udemy_C#_intermediate_exercises/Design_A_Stack/Design_A_Stack/obj/x86/Debug/Design_A_Stack.csproj.CoreCompileInputs.cache
