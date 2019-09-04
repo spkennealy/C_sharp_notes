@@ -8,13 +8,6 @@ namespace Design_A_Stack
 
         public List<object> CurrentStack = new List<object>();
 
-        // A Stack is a data structure for storing a list of elements in a LIFO(last in, first out) fashion.
-
-        public Stack()
-        {
-
-        }
-
         // Design a class called Stack with three methods.
 
         // void Push(object obj)
@@ -34,6 +27,7 @@ namespace Design_A_Stack
             }
 
             CurrentStack.Add(obj);
+            Console.WriteLine("Added {0} to the stack", obj);
         }
 
         // object Pop()
@@ -52,6 +46,7 @@ namespace Design_A_Stack
 
             var top = CurrentStack[CurrentStack.Count - 1];
             CurrentStack.Remove(top);
+            Console.WriteLine("Removed {0} from the stack", top);
 
             return top;
         }
@@ -61,7 +56,8 @@ namespace Design_A_Stack
 
         public void Clear()
         {
-
+            CurrentStack = new List<object>();
+            Console.WriteLine("Cleared the stack. The count is now {0}.", CurrentStack.Count);
         }
     }
 }
