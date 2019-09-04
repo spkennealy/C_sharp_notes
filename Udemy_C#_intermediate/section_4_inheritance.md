@@ -232,3 +232,38 @@ namespace Casting
     }
 }
 ```
+
+### **Boxing & Unboxing**
+
+All types in C#
+* Value types
+    * stored on the stack
+    * Ex: 
+        * All primitive types: byte, int, float, char, bool
+        * The struct type 
+* Reference types
+    * stored in the heap
+    * Ex: 
+        * Any classes (Object, Array, String, DbMigrator, etc)
+* An object reference can be implicity converted to a base class reference.
+* The Object class is the base class of classes in the .NET framework.
+
+**Boxing**
+* The process of converting a value type instance to an object reference.
+```csharp
+int number = 10;
+object obj = number;
+
+// or 
+object obj = 10;
+```
+* This would create an object in the heap and then a reference in the stack that points to the heap.
+
+**Unboxing**
+* The opposite of boxing. You can cast an object to a value type.
+```csharp
+object obj = 10;
+int number = (int)obj;
+```
+
+Boxing & unboxing have a performance penalty.
