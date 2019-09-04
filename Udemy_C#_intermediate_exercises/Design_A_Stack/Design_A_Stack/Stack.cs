@@ -37,15 +37,23 @@ namespace Design_A_Stack
         }
 
         // object Pop()
-        // The Pop() method removes the object on top of the stack and returns it.Make sure to take into account
+        // The Pop() method removes the object on top of the stack and returns it. Make sure to take into account
         // the scenario that we call the Pop() method on an empty stack. In this case, this method should throw
         // an InvalidOperationException. Remember, your classes should always be in a valid state and used
-        // properly. When they are misused, they should throw exceptions.Again, thinking of all these edge cases,
+        // properly. When they are misused, they should throw exceptions. Again, thinking of all these edge cases,
         // separates you from an average programmer. The code written this way will be more robust and with less bugs.
 
         public object Pop()
         {
+            if (CurrentStack.Count == 0)
+            {
+                throw new InvalidOperationException("Current stack is empty.");
+            }
 
+            var top = CurrentStack[CurrentStack.Count - 1];
+            CurrentStack.Remove(top);
+
+            return top;
         }
 
         // void Clear()
