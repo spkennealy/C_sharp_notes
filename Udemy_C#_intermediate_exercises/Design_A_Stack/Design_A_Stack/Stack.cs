@@ -28,7 +28,12 @@ namespace Design_A_Stack
 
         public void Push(object obj)
         {
-            
+            if (obj == null)
+            {
+                throw new InvalidOperationException("Object cannot be null.");
+            }
+
+            CurrentStack.Add(obj);
         }
 
         // object Pop()
