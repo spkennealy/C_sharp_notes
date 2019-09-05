@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{A31C3745-70FE-4A52-8D2C-B277A23E52E6}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Design_A_Stack/Stack.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Design_A_Stack/Program.cs">
     <Files>
-      <File FileName="Design_A_Stack/Program.cs" Line="9" Column="13" />
-      <File FileName="Design_A_Stack/Stack.cs" Line="16" Column="12" />
+      <File FileName="Design_A_Stack/Program.cs" Line="28" Column="2" />
+      <File FileName="Design_A_Stack/Stack.cs" Line="11" Column="59" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Design_A_Stack" expanded="True">
             <Node name="Design_A_Stack" expanded="True">
-              <Node name="Stack.cs" selected="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -18,7 +18,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.ItemProperties.Design__A__Stack FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Design__A__Stack PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
