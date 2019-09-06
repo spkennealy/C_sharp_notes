@@ -73,3 +73,17 @@ var shape = new Shape(); // won't compile
 Benefits of using abstract:
 * When you want to provide some common behavior, while forcing other developers to follow your design.
 
+### **Sealed Classes & Members**
+* Sealed classes are the opposite of abstract class.
+* Prevents derivation of classes or overridding of methods.
+```csharp
+public class Circle : Shape 
+{ 
+    public sealed override void Draw() // add sealed here 
+    {
+        // Implementation for circle
+    }
+}
+```
+* No need to used sealed unless you are overriding a method.
+* Sealed classes are slightly faster because of some runtime optimizations.
