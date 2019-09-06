@@ -35,6 +35,7 @@
     <Compile Include="DbConnection.cs" />
     <Compile Include="SqlConnection.cs" />
     <Compile Include="OracleConnection.cs" />
+    <Compile Include="DbCommand.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
