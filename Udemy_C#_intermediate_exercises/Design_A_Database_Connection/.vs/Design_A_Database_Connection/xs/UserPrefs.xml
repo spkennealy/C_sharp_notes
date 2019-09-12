@@ -1,17 +1,17 @@
 ﻿<Properties StartupConfiguration="{CF1B5B08-B23B-4470-9593-18D2A6BA880F}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Design_A_Database_Connection/DbCommand.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Design_A_Database_Connection/Program.cs">
     <Files>
-      <File FileName="Design_A_Database_Connection/Program.cs" Line="19" Column="1" />
+      <File FileName="Design_A_Database_Connection/Program.cs" Line="25" Column="1" />
       <File FileName="Design_A_Database_Connection/SqlConnection.cs" />
       <File FileName="Design_A_Database_Connection/OracleConnection.cs" />
-      <File FileName="Design_A_Database_Connection/DbCommand.cs" Line="14" Column="41" />
+      <File FileName="Design_A_Database_Connection/DbCommand.cs" Line="25" Column="45" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Design_A_Database_Connection" expanded="True">
             <Node name="Design_A_Database_Connection" expanded="True">
-              <Node name="DbCommand.cs" selected="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
