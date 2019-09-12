@@ -17,5 +17,12 @@ namespace Design_A_Database_Connection
             _dbConnection = dbConnection;
             _instructions = instructions;
         }
+
+        public void Execute()
+        {
+            _dbConnection.OpenConnection();
+            Console.WriteLine("Instructions: " + _instructions);
+            _dbConnection.CloseConnection();
+        }
     }
 }
