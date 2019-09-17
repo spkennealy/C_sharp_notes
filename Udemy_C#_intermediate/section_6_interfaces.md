@@ -160,3 +160,91 @@ namespace MultipleInheritance
     }
 }
 ```
+
+### **Interfaces and Polymorphism**
+```csharp
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Polymorphism
+{
+    // VideoEncoder.cs
+    public class VideoEncoder
+    {
+        // private readonly MailService _mailService; no longer need this with the INotificationChannel
+        priavte readonly IList<INotificationChannel> _notificationChannels;
+
+        public VideoEncoder()
+        {
+            // _mailService = new MailService(); this will change to this:
+            _notificationChannels = new List<INotificationChannel>();
+        }
+
+        public void Encode(Video video)
+        {
+            // Video encoding logic
+            // ...
+
+            // _mailService.Send(new Mail()); This will be removed
+
+            foreach (var channel in _notificationChannels)
+                channel.Send(new Message());
+        }
+
+        public void RegisterNotificationChannel(INotificationChannel channel)
+        {
+            _notificationChannels.Add(channel);
+        }
+    }
+
+    // MailService.cs
+    public class MailService
+    {
+        public void Send(Mail mail)
+        {
+            Console.WriteLine("Sending email...");
+        }
+    }
+
+    // INotificationChannel.cs
+    public interface INotificationChannel
+    {
+        void Send(Message message);
+    }
+
+    // Message.cs
+    public class Message
+    {
+
+    }
+
+    // MailNotificationChannel.cs
+    public class MailNotificationChannel : INotificationChannel
+    {
+        public void Send(Message message)
+        {
+            Console.WriteLine("Sending mail...");
+        }
+    }
+
+    // SmsNotificationChannel.cs
+    public class SmsNotificationChannel : INotificationChannel
+    {
+        public void Send(Message message)
+        {
+            Console.WriteLine("Sending SMS...");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var encoder = new VideoEncoder();
+            encoder.RegisterNotificationChannel(new MailNotificationChannel());
+            encoder.RegisterNotificationChannel(new SmsNotificationChannel());
+            encoder.Encode(new Video());
+        }
+    }
+}
+```
