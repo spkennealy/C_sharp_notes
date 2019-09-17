@@ -108,8 +108,54 @@ namespace Extensibility
     {
         static void Main(string[] args)
         {
-            var dbMigrator = new DbMigrator(new ConsoleLogger());
+            var dbMigrator = new DbMigrator(new FileLogger("C:\\Projects\\log.txt"));
             dbMigrator.Migrate();
+        }
+    }
+}
+```
+
+### **Interfaces & Inheritance**
+
+Interfaces have nothing to do with inheritance, because you still need to implement the methods in that interface.
+
+```csharp
+namespace MultipleInheritance
+{
+    // IDraggable.cs
+    public interface IDraggable
+    {
+        void Drag();
+    }
+    
+    // IDroppable.cs
+    public interface IDroppable
+    {
+        void Drop();
+    }
+
+    public class TextBox : UiControl, IDraggable, IDroppable
+    {
+        public void Drag()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Drop()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class UiControl
+    {
+        public string Id { get; set; }
+        public Size Size { get; set; }
+        public Position TopLeft { get; set; }
+
+        public virtual void Draw()
+        {
+
         }
     }
 }
