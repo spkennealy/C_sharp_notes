@@ -4,7 +4,7 @@ namespace Design_A_Workflow_Engine
 {
     public class Workflow
     {
-        public IList<IActivity> Activities;
+        public readonly IList<IActivity> Activities;
 
         public Workflow()
         {
@@ -14,6 +14,11 @@ namespace Design_A_Workflow_Engine
         public void Add(IActivity activity)
         {
             Activities.Add(activity);
+        }
+
+        public void Remove(IActivity activity)
+        {
+            Activities.Remove(activity);
         }
     }
 }
