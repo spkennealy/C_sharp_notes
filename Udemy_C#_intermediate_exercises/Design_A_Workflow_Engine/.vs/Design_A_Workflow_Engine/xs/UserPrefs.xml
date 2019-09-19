@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{B2C55E42-9117-47AA-839A-A39C3275063E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Design_A_Workflow_Engine/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Design_A_Workflow_Engine/Workflow.cs">
     <Files>
-      <File FileName="Design_A_Workflow_Engine/Program.cs" Line="11" Column="26" />
+      <File FileName="Design_A_Workflow_Engine/Program.cs" Line="19" Column="1" />
       <File FileName="Design_A_Workflow_Engine/WorkflowEngine.cs" Line="4" Column="6" />
-      <File FileName="Design_A_Workflow_Engine/Workflow.cs" Line="17" Column="10" />
+      <File FileName="Design_A_Workflow_Engine/Workflow.cs" Line="21" Column="41" />
       <File FileName="Design_A_Workflow_Engine/IActivity.cs" Line="5" Column="9" />
       <File FileName="Design_A_Workflow_Engine/UploadVideo.cs" Line="12" Column="1" />
       <File FileName="Design_A_Workflow_Engine/EncodeVideo.cs" Line="12" Column="1" />
@@ -15,7 +15,7 @@
         <State name="__root__">
           <Node name="Design_A_Workflow_Engine" expanded="True">
             <Node name="Design_A_Workflow_Engine" expanded="True">
-              <Node name="Program.cs" selected="True" />
+              <Node name="Workflow.cs" selected="True" />
             </Node>
           </Node>
         </State>
