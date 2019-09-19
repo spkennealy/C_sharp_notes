@@ -35,6 +35,10 @@
     <Compile Include="IActivity.cs" />
     <Compile Include="Workflow.cs" />
     <Compile Include="WorkflowEngine.cs" />
+    <Compile Include="UploadVideo.cs" />
+    <Compile Include="EncodeVideo.cs" />
+    <Compile Include="NotificationEmail.cs" />
+    <Compile Include="ChangeStatusOfVideo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

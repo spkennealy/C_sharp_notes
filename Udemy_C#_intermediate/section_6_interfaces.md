@@ -172,7 +172,7 @@ namespace Polymorphism
     public class VideoEncoder
     {
         // private readonly MailService _mailService; no longer need this with the INotificationChannel
-        priavte readonly IList<INotificationChannel> _notificationChannels;
+        private readonly IList<INotificationChannel> _notificationChannels;
 
         public VideoEncoder()
         {

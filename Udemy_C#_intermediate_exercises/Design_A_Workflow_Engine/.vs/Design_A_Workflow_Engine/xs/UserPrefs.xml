@@ -1,24 +1,28 @@
 ﻿<Properties StartupConfiguration="{B2C55E42-9117-47AA-839A-A39C3275063E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Design_A_Workflow_Engine/WorkflowEngine.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Design_A_Workflow_Engine/Program.cs">
     <Files>
-      <File FileName="Design_A_Workflow_Engine/Program.cs" Line="12" Column="1" />
-      <File FileName="Design_A_Workflow_Engine/WorkflowEngine.cs" Line="10" Column="1" />
-      <File FileName="Design_A_Workflow_Engine/Workflow.cs" Line="1" Column="1" />
-      <File FileName="Design_A_Workflow_Engine/IActivity.cs" Line="1" Column="1" />
+      <File FileName="Design_A_Workflow_Engine/Program.cs" Line="11" Column="26" />
+      <File FileName="Design_A_Workflow_Engine/WorkflowEngine.cs" Line="4" Column="6" />
+      <File FileName="Design_A_Workflow_Engine/Workflow.cs" Line="17" Column="10" />
+      <File FileName="Design_A_Workflow_Engine/IActivity.cs" Line="5" Column="9" />
+      <File FileName="Design_A_Workflow_Engine/UploadVideo.cs" Line="12" Column="1" />
+      <File FileName="Design_A_Workflow_Engine/EncodeVideo.cs" Line="12" Column="1" />
+      <File FileName="Design_A_Workflow_Engine/NotificationEmail.cs" Line="12" Column="1" />
+      <File FileName="Design_A_Workflow_Engine/ChangeStatusOfVideo.cs" Line="13" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Design_A_Workflow_Engine" expanded="True">
             <Node name="Design_A_Workflow_Engine" expanded="True">
-              <Node name="WorkflowEngine.cs" selected="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Design__A__Workflow__Engine FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Design__A__Workflow__Engine PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
