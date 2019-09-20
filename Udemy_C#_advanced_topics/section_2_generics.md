@@ -1,6 +1,4 @@
-## **Section 2: Advanced Topics**
-
-### **Generics**
+## **Section 2: Generics**
 
 ```csharp
 using System;
