@@ -92,6 +92,11 @@ namespace Generics
         {
             return a.CompareTo(b) > 0 ? a : b; 
         }
+
+        public void DoSomething(T value)
+        {
+            var obj = new T(); // this will not compile unless you add this constraint "where T : new()"
+        }
     }
 }
 ```
@@ -110,7 +115,7 @@ namespace Generics
     {
         public float CalculateDiscount(TProduct product)
         {
-            product. // you'll get all the attributes from the product class
+            product.Price // you'll get all the attributes and methods from the product class
         }
     }
 
@@ -123,6 +128,54 @@ namespace Generics
     public class Book : Product
     {
         public string Isbn { get; set; }
+    }
+}
+```
+
+```csharp
+namespace Generics
+{
+    // this is availalbe in System.Null
+    public class Nullable<T> where T : struct
+    {
+        // value types cannot be null, but if we do this constraint we can
+        private object _value;
+
+        public Nullable()
+        { 
+        }
+
+        public Nullable(T value)
+        {
+            _value = value;
+        }
+
+        public bool HasValue
+        {
+            get { return _value != null; }
+        }
+
+        public T GetValueOrDefault()
+        {
+            if (HasValue)
+                return (T)_value;
+
+            return default(T);
+        }
+    }
+
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            var number = new Nullable<int>(5);
+            Console.WriteLine("Has Value? " + number.HasValue); // true
+            Console.WriteLine("Value: " + number.GetValueOrDefault()); // 5
+
+            var number1 = new Nullable<int>();
+            Console.WriteLine("Has Value? " + number.HasValue); // false
+            Console.WriteLine("Value: " + number.GetValueOrDefault()); // 0
+        }
     }
 }
 ```
