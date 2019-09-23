@@ -65,6 +65,14 @@ namespace LambdaExpressions
 
             // books.FindAll(Predicate<Book>) -- all find methods accept a predicate
             var cheapBooks = books.FindAll(IsCheaperThan10Dollars);
+
+            // instead, you can do this:
+            var cheapBooksLambda = books.FindAll(book => book.Price < 10);
+
+            foreach (var book in cheapBooks)
+            {
+                Console.WriteLine(book.Title);
+            }
         }
 
         // This is predicate method
