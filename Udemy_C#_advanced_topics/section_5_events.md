@@ -143,3 +143,4 @@ public class VideoEncoder
     }
 }
 ```
+* You most likely won't ever need to create your own event hanlder.
