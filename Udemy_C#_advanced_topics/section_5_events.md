@@ -38,8 +38,13 @@ namespace EventsAndDelegates
         static void Main(string[] args)
         {
             var vidoe = new Video() { Title = "Video 1" };
-            var videoEncoder = new VideoEncoder();
+            var videoEncoder = new VideoEncoder(); // publisher
+            var mailService = new MailService(); // subscriber
+            var messageService = new MessageService(); // subscriber
 
+            // adds a list of method calls to the publisher
+            videoEncoder.VideoEncoded += mailService.OnVideoEncoded; // no call, just making a reference to the method.
+            videoEncoder.VideoEncoded += messageService.OnVideoEncoded;
             videoEncoder.Encode(video);
         }
     }
@@ -48,6 +53,24 @@ namespace EventsAndDelegates
     public class Video
     {
         public string Title { get; set; }
+    }
+
+    // MailService.cs
+    public class MailService
+    {
+        public void OnVideoEncoded(object source, EventArgs e)
+        {
+            Console.WriteLine("MailSerivce: Sending an email...");
+        }
+    }
+
+    // MessageService.cs
+    public class MessageService
+    {
+        public void OnVideoEncoded(object source, EventArgs e)
+        {
+            Console.WriteLine("MessageService: Sending an SMS...");
+        }
     }
 
     // VideoEncoder.cs
