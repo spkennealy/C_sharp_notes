@@ -58,19 +58,24 @@ namespace EventsAndDelegates
     // MailService.cs
     public class MailService
     {
-        public void OnVideoEncoded(object source, EventArgs e)
+        public void OnVideoEncoded(object source, VideoEventArgs args)
         {
-            Console.WriteLine("MailSerivce: Sending an email...");
+            Console.WriteLine("MailSerivce: Sending an email..." + args.Video.Title);
         }
     }
 
     // MessageService.cs
     public class MessageService
     {
-        public void OnVideoEncoded(object source, EventArgs e)
+        public void OnVideoEncoded(object source, VideoEventArgs args)
         {
-            Console.WriteLine("MessageService: Sending an SMS...");
+            Console.WriteLine("MessageService: Sending an SMS..." + args.Video.Title);
         }
+    }
+
+    public class VideoEventArgs : EventArgs
+    {
+        public Video Video { get; set; }
     }
 
     // VideoEncoder.cs
@@ -80,7 +85,9 @@ namespace EventsAndDelegates
         // 2. Define an event, based on that delegate
         // 3. Raise the event
 
-        public delegate void VideoEncodedEventHandler(object source, EventArgs args);
+        // Changed this when adding in the VideoEventArgs
+        // public delegate void VideoEncodedEventHandler(object source, EventArgs args);
+        public delegate void VideoEncodedEventHandler(object source, VideoEventArgs args);
         
         public event VideoEncodedEventHandler VideoEncoded;
 
@@ -89,16 +96,49 @@ namespace EventsAndDelegates
             Console.WriteLine("Encoding video...");
             Thread.Sleep(3000);
 
-            OnVideoEncoded();
+            OnVideoEncoded(video);
         }
 
         // convention says that it should be protected, virtual, void, and start with 'On'
-        protected virtual void OnVideoEncoded()
+        protected virtual void OnVideoEncoded(Video video)
         {
             if (VideoEncoded != null)
             {
-                VideoEncoded(this, EventArgs.Empty);
+                // when you change EventArgs to a custom class, like VideoEventArgs, in the delegate, you cannot pass in EventArgs args
+                // VideoEncoded(this, EventArgs.Empty);
+                VideoEncoded(this, new VideoEventArgs() { Video = video });
             }
+        }
+    }
+}
+```
+
+You can acheive the same thing with less code:
+```csharp
+// VideoEncoder.cs
+public class VideoEncoder
+{
+    // EventHandler
+    // EventHandler<TEventArgs>
+    
+    public event EventHandler<VideoEventArgs> VideoEncoded; // this class is available in C#
+
+    public void Encode(Video video)
+    {
+        Console.WriteLine("Encoding video...");
+        Thread.Sleep(3000);
+
+        OnVideoEncoded(video);
+    }
+
+    // convention says that it should be protected, virtual, void, and start with 'On'
+    protected virtual void OnVideoEncoded(Video video)
+    {
+        if (VideoEncoded != null)
+        {
+            // when you change EventArgs to a custom class, like VideoEventArgs, in the delegate, you cannot pass in EventArgs args
+            // VideoEncoded(this, EventArgs.Empty);
+            VideoEncoded(this, new VideoEventArgs() { Video = video });
         }
     }
 }
