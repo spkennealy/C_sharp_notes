@@ -47,6 +47,23 @@ namespace Linq
             books.OrderBy(b => b.Title);
             // you can also chain the methods
             var cheapBooks = books.Where(book => book.Price < 10).OrderBy(b => b.Title);
+            // --------------
+
+            // Linq.Select
+            var cheapBooks = books
+                                .Where(book => book.Price < 10)
+                                .OrderBy(b => b.Title)
+                                .Select(b => b.Title);
+            // Select will select the titles only, which are strings in this case
+            // The indentations are convention
+            // The syntax above is called LINQ Extension Methods
+
+            // LINQ Query Operators
+            var cheaperBooks = 
+                from b in books
+                where b.Price < 10
+                orderby b.Title
+                select b.Title;
         }
     }
 
