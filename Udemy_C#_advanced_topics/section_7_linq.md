@@ -41,6 +41,12 @@ namespace Linq
 
             foreach (var book in cheapBooks)
                 Console.WriteLine(book.Title + " " + book.Price);
+            // --------------
+            
+            // Linq.OrderBy
+            books.OrderBy(b => b.Title);
+            // you can also chain the methods
+            var cheapBooks = books.Where(book => book.Price < 10).OrderBy(b => b.Title);
         }
     }
 
