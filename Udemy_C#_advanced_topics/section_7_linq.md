@@ -59,11 +59,42 @@ namespace Linq
             // The syntax above is called LINQ Extension Methods
 
             // LINQ Query Operators
+            // This does the same thing as above.
             var cheaperBooks = 
                 from b in books
                 where b.Price < 10
                 orderby b.Title
                 select b.Title;
+
+            // To find or get one "book" (object) in a list, you can use the Single method
+            var book = books.Single(b => b.Title == "ASP.NET MVC");
+            // If that book is not found, there will be an exception
+
+            // if you're not sure it the object is in the list, you can use SingleOrDefault
+            var book = books.SingleOrDefault(b => b.Title == "ASP.NET MVC");
+            // this will return null if not found
+
+            // First will get the first object. You can pass a predicate to find the first that fits your condition.
+            // We also have FirstOrDefault, Last, and LastOrDefault
+            var book = books.First();
+            var book = books.First(b => b.Title == "C# Advanced Topics");
+            var book = books.FirstOrDefualt(b => b.Title == "C# Advanced Topics");
+            var book = books.Last(b => b.Title == "C# Advanced Topics");
+            var book = books.LastOrDefualt(b => b.Title == "C# Advanced Topics");
+
+            // Skip & Take
+            // used for paging data
+            var book = books.Skip(2).Take(3);
+
+            // Count
+            var count = books.Count();
+
+            // Max & Min - in a list of books, you would need to give it a meaning
+            var highestPricedBook = books.Max(b => b.Price);
+            var highestPricedBook = books.Min(b => b.Price);
+
+            // Sum
+            var sum = books.Sum(b => b.Price);
         }
     }
 
