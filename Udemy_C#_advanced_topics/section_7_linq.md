@@ -95,6 +95,9 @@ namespace Linq
 
             // Sum
             var sum = books.Sum(b => b.Price);
+
+            // Average
+            var avg = books.Average(b => b.Price);
         }
     }
 
