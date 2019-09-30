@@ -18,13 +18,61 @@ namespace ExceptionHandling
             var calculator = new Calculator();
             var result = calculator.Divide(5, 0); // this will error out
 
+            // example here is meant for the finally block
+            var streamReader = new StreamReader(@"c:\file.zip");
+            // ----------- finally block ex --------------
+
             // to handle exception, we can use try/catch blocks
             try 
             {
                 var calculator = new Calculator();
                 var result = calculator.Divide(5, 0); 
+
+                // example here is meant for the finally block
+                var content = streamReader.ReadToEnd();
+                // ----------- finally block ex --------------
             }
-            catch (Exception)
+            // you can have multiple catch blocks, starting from the most specific to the most generic
+            catch (DivideByZeroException ex)
+            {
+
+            }
+            catch (ArithmeticException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Sorry, an unexpected error occured.");
+            }
+            // you can have a finally block and this would be a clean up block
+            finally
+            {
+                streamReader.Dispose(); // whenever you are using files or unmanaged resourses to dispose of them
+            }
+        }
+    }
+}
+```
+
+**`using` Example**
+```csharp
+namespace ExceptionHandling
+{    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            StreamReader streamReader = null;
+            try 
+            {
+                // no need to use a finally block when the `using` statement is used
+                using(var streamReader = new StreamReader(@"c:\file.zip"))
+                {
+                    var content = streamReader.ReadToEnd();
+                }
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine("Sorry, an unexpected error occured.");
             }
