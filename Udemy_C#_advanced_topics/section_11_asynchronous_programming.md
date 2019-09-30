@@ -29,7 +29,7 @@ public partial class MainWindow : Window
 
     private void Button_Click(object sender, RoutedEventArgs e)
     {
-        DownloadHtml("http://msdn.microsoft.com");
+        DownloadHtmlAsync("http://msdn.microsoft.com");
     }
 
     // how to write an aysnc method
@@ -40,7 +40,7 @@ public partial class MainWindow : Window
 
         using (var streamWriter = new StreamWriter(@"c:\projects\result.html"))
         {
-            streamWriter.Write(html);
+            streamWriter.WriteAsync(html);
         }
     }
 
