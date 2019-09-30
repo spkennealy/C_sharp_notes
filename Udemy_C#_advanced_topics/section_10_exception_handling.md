@@ -80,3 +80,60 @@ namespace ExceptionHandling
     }
 }
 ```
+
+**Custom Exceptions**
+```csharp
+using System;
+using System.Collections.Generic;
+
+namespace ExceptionHandling
+{    
+    // YouTubeException.cs
+    public class YouTubeException : Exception
+    {
+        public YouTubeException(string message, Exception innerException)
+            : base(message, innerException)
+            {
+
+            }
+    }
+
+    // YouTubeApi.cs
+    public class YouTubeApi
+    {
+        public List<Video> GetVideos(string user)
+        {
+            try
+            {
+                // Access YouTube web service
+                // Read the date
+                // Create a list of Video objects
+            }
+            catch (Exception ex)
+            {
+                // Log
+                throw new YouTubeException("Could not fetch the videos from YouTube.", ex);
+            }
+
+            return new List<Video>();
+        }
+    }
+
+    // Program.cs
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                var api = new YouTubeApi();
+                var videos = api.GetVideos("Sean");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+}
+```
