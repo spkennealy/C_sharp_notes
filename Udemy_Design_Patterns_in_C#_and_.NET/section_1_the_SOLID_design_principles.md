@@ -413,8 +413,9 @@ namespace DesignPatters
 {
     public class Rectangle
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
+        // to fix the issue below, you can add `virtual`
+        public virtual int Width { get; set; }
+        public virtual int Height { get; set; }
 
         public Rectangle()
         {
@@ -432,6 +433,22 @@ namespace DesignPatters
         }
     }
 
+    public class Square : Rectangle
+    {
+        // to fix the issue below we would change `new` to `override`
+        // public new int Width
+        public override int Width
+        {
+            set { base.Width = base.Height = value; }
+        }
+        
+        // public new int Height
+        public override int Height
+        {
+            set { base.Width = base.Height = value; }
+        }
+    }
+
     public class Demo
     {
         static public int Area(Rectangle r) => r.Width * r.Height;
@@ -440,6 +457,15 @@ namespace DesignPatters
         {
             Rectangle rc = new Rectangle();
             WriteLine($"{rc} has area {Area(rc)}");
+
+            Square sq = new Square();
+            sq.Width = 4;
+            WriteLine($"{sq} has area {Area(sq)}");
+
+            // if you change it to a rectangle it will not behave correctly, because you're not setting the Height
+            Rectangle sq = new Square();
+            sq.Width = 4;
+            WriteLine($"{sq} has area {Area(sq)}");
         }
     }
 }
