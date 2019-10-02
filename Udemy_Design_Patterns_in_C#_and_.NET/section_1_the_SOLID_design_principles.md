@@ -159,10 +159,19 @@ namespace DesignPatterns
 ```
 * The whole point of the single responsiblity principle is that a class is responsible for one thing and has one reason to change.
 
-### **2. The Open-Closed Principle**
+### **2. The `O`pen-Closed Principle**
 
 Violating the OCP:
 ```csharp
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
 namespace DesignPatterns
 {
     public enum Color
@@ -249,6 +258,15 @@ namespace DesignPatterns
 
 Instead, we can implement the specification pattern:
 ```csharp
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
 namespace DesignPatterns
 {
     public enum Color
@@ -373,6 +391,84 @@ namespace DesignPatterns
             {
                 WriteLine($" - {p.Name} is big and blue");
             }
+        }
+    }
+}
+```
+
+### **3. The `L`iskov Substitution Principle**
+
+* You should be able to substitute a base type with a sub type.
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace DesignPatters 
+{
+    public class Rectangle
+    {
+        public int Width { get; set; }
+        public int Height { get; set; }
+
+        public Rectangle()
+        {
+        }
+
+        public Rectangle(int width, int height)
+        {
+            Width = width;
+            Height = height;
+        }
+
+        public override string ToSting()
+        {
+            return $"{nameof(Width)}: {Width}, {nameof(Height)}: {Height}";
+        }
+    }
+
+    public class Demo
+    {
+        static public int Area(Rectangle r) => r.Width * r.Height;
+
+        static void Main(string[] args)
+        {
+            Rectangle rc = new Rectangle();
+            WriteLine($"{rc} has area {Area(rc)}");
+        }
+    }
+}
+```
+
+
+
+
+
+
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace DesignPatters 
+{
+
+    public class Demo
+    {
+        static void Main(string[] args)
+        {
+            
         }
     }
 }
