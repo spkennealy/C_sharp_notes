@@ -471,8 +471,145 @@ namespace DesignPatters
 }
 ```
 
+### **3. The Interface Segregation Principle**
 
+Your interfaces should be segregated.
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
 
+namespace DesignPatters 
+{
+    public class Document
+    {
+
+    }
+
+    public interface IMachine
+    {
+        void Print(Document d);
+        void Scan(Document d);
+        void Fax(Document d);
+    }
+
+    // IMachine works if you have a multi-functioning printer...
+    public class MultifunctionPrinter : IMachine
+    {
+        public void Print(Document d)
+        {
+            // ... 
+        }
+        public void Scan(Document d)
+        {
+            // ... 
+        }
+        public void Fax(Document d)
+        {
+            // ... 
+        }
+    }
+
+    // But what happens here, when you have a printer that can just print...
+    public class OldFashionedPrinter : IMachine
+    {
+        public void Print(Document d)
+        {
+            // ... 
+        }
+        public void Scan(Document d)
+        {
+            // What do you do here? No implementation
+        }
+        public void Fax(Document d)
+        {
+            // What do you do here? No implementation
+        }
+    }
+
+    // Instead, you can implement more smaller interfaces
+    public interface IPrinter
+    {
+        void Print(Document d);
+    }
+
+    public interface IScanner
+    {
+        void Scan(Document d);
+    }
+
+    public interface IFax
+    {
+        void Fax(Document d);
+    }
+
+    // If you have a photocopier, you can do this...
+    public class Photocopier : IPrinter, IScanner
+    {
+        public void Print(Document d)
+        {
+            // ... 
+        }
+        public void Scan(Document d)
+        {
+            // ...
+        }
+    }
+
+    // You can have a multifunctional interface inherit from other interfaces:
+    public interface IMultiFunctionDevice : IScanner, IPrinter // , ...
+    {
+
+    }
+
+    public class MultiFunctionMachine : IMultiFunctionDevice
+    {
+        private IPrinter printer;
+        private IScanner scanner;
+
+        public MultiFunctionMachine(IPrinter printer, IScanner scanner)
+        {
+            if (printer == null)
+            {
+                throw new ArgumentNullException(paramName: nameof(printer));
+            }
+            if (scanner == null)
+            {
+                throw new ArgumentNullException(paramName: nameof(scanner));
+            }
+
+            this.printer = printer;
+            this.scanner = scanner;
+        }
+
+        // You can delegate the methods to the printer & scanner.. "the decorator pattern"
+        public void Print(Document d)
+        {
+            printer.Print(d);
+        }
+
+        public void Scan(Document d)
+        {
+            scanner.Scan(d);
+        }
+    }
+
+    public class Demo
+    {
+        static void Main(string[] args)
+        {
+            
+        }
+    }
+}
+```
+* "Make sure you don't pay for things you don't need."
+* Make more smaller interfaces.
 
 
 
