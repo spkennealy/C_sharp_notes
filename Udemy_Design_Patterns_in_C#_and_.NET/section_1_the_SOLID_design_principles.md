@@ -471,7 +471,7 @@ namespace DesignPatters
 }
 ```
 
-### **3. The Interface Segregation Principle**
+### **4. The `I`nterface Segregation Principle**
 
 Your interfaces should be segregated.
 ```csharp
@@ -610,6 +610,160 @@ namespace DesignPatters
 ```
 * "Make sure you don't pay for things you don't need."
 * Make more smaller interfaces.
+
+### **5. The `D`ependency Inversion Principle**
+* High-level parts of the system should not depend on low-level parts of the system directly.
+* Instead, they should depend on some kind of abstraction.
+
+Example of a simple geneology system:
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace DesignPatters 
+{
+    public enum Relationship
+    {
+        Parent,
+        Child,
+        Sibling
+    }
+
+    public class Person
+    {
+        public string Name;
+        // for simplicity, just the name for now
+        // public DateTime DateOfBirth
+    }
+
+    // low-level
+    public class Relationships
+    {
+        private List<(Person, Relationship, Person)> relations 
+            = new List<(Person, Relationship, Person)>();
+
+        public void AddParentAndChild(Person parent, Person child)
+        {
+            relations.Add(parent, Relationship.Parent, child);
+            relations.Add(child, Relationship.Child, parent);
+        }
+
+        // one solution, but now you're exposing your private List
+        public List<(Person, Relationship, Person)> Relations => relations;
+    }
+
+    public class Research
+    {
+        public void Research(Relationships relationships)
+        {
+            var relations = relationships.Relations;
+            foreach (var r in relations.Where(
+                x => x.Item1.Name == "John" &&
+                    x.Item2 == Relationship.Parent
+            ))
+            {
+                WriteLine($"John has a child called {r.Item3.Name}");
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            var parent = new Person { Name = "John" };
+            var child1 = new Person { Name = "Chris" };
+            var child2 = new Person { Name = "Mary" };
+
+            var relationships = new Relationship();
+            relationships.AddParentAndChild(parent, child1);
+            relationships.AddParentAndChild(parent, child2);
+
+            new Research(relationships);
+        }
+    }
+}
+```
+
+Instead of exposing your private list, you can do this:
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace DesignPatters 
+{
+    public enum Relationship
+    {
+        Parent,
+        Child,
+        Sibling
+    }
+
+    public class Person
+    {
+        public string Name;
+    }
+
+    // instead of exposing your private list, you can do this:
+    public interface IRelationshipBrowser
+    {
+        IEnumerable<Person> FindAllChildrenOf(string name);
+    }
+
+    // low-level
+    public class Relationships : IRelationshipBrowser
+    {
+        private List<(Person, Relationship, Person)> relations 
+            = new List<(Person, Relationship, Person)>();
+
+        public void AddParentAndChild(Person parent, Person child)
+        {
+            relations.Add(parent, Relationship.Parent, child);
+            relations.Add(child, Relationship.Child, parent);
+        }
+
+        public IEnumerable<Person> FindAllChildrenOf(string name)
+        {
+            return relations.Where(
+                x => x.Item1.Name == name &&
+                     x.Item2 == Relationship.Parent
+            ).Select(r => r.Item3);
+        }
+    }
+    
+    // High-level module:
+    public class Research
+    {
+        public Research(IRelationshipBrowser browser)
+        {
+            foreach (var p in browser.FindAllChildrenOf("John"))
+                WriteLine($"John has a child called {p.Name}");
+        }
+
+        static void Main(string[] args)
+        {
+            var parent = new Person { Name = "John" };
+            var child1 = new Person { Name = "Chris" };
+            var child2 = new Person { Name = "Mary" };
+
+            var relationships = new Relationship();
+            relationships.AddParentAndChild(parent, child1);
+            relationships.AddParentAndChild(parent, child2);
+
+            new Research(relationships);
+        }
+    }
+}
+```
 
 
 
