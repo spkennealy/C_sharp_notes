@@ -1,0 +1,52 @@
+## **Section 2: Builder**
+
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace DesignPatters 
+{
+
+    public class Demo
+    {
+        static void Main(string[] args)
+        {
+            
+        }
+    }
+}
+```
+
+
+
+
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace DesignPatters 
+{
+
+    public class Demo
+    {
+        static void Main(string[] args)
+        {
+            
+        }
+    }
+}
+```
