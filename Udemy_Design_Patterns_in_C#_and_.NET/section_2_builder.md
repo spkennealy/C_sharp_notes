@@ -86,10 +86,14 @@ namespace DesignPatters
             root.Name = rootName;
         }
 
-        public void AddChild(string childName, string childText)
+        // public void AddChild(string childName, string childText)
+        // to instead be able to have a fluent builder like so: builder.AppendChild("hi").AppendChild("you")
+        // return the same object
+        public HtmlBuilder AddChild(string childName, string childText)
         {
             var e = new HtmlElement(childName, childText);
             root.Elements.Add(e);
+            return this; // add this to return the object
         }
 
         public override string ToString()
@@ -125,6 +129,8 @@ namespace DesignPatters
             var builder = new HtmlBuilder("ul");
             builder.AddChild("li", "hello");
             builder.AddChild("li", "world");
+            // by returning the object in AddChild, we can chain these calls
+            builder.AddChild("li", "hello").AddChild("li", "world");
             WriteLine(builder.ToString());
         }
     }
