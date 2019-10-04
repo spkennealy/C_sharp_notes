@@ -14,7 +14,15 @@
 * **Behavioral Patterns**
     * They are all different; no central theme
 
+### **Builder**
+Motivation
+* Some objects are simple and can be created in a single constructor call
+* Other objects require a lot of ceremony to create
+* Having an object with 10 constructor arguments is not productive
+* Instead, opt for piecewise construction
+* Bulider provides and API for constructing an object step-by-step
 
+Builder - when piecewise object construction is complicated, provide an API for doing it succinctly.
 
 ```csharp
 using System;
@@ -33,7 +41,20 @@ namespace DesignPatters
     {
         static void Main(string[] args)
         {
-            
+            var hello = "hello";
+            var sb = new StringBuilder();
+            sb.Append("<p>");
+            sb.Append(hello);
+            sb.Append("</p>");
+
+            var words = new[] { "hello", "world" };
+            sb.Clear();
+            sb.Append("<ul>");
+            foreach (var word in words)
+            {
+                sb.AppendFormat("<li>{0}</li>", word);
+            }
+            sb.Append("</ul>");
         }
     }
 }
