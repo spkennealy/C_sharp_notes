@@ -137,28 +137,99 @@ namespace DesignPatters
 }
 ```
 
-
-
-
+### **Fluent Builder Inheritance with Recursive Generics**
 
 ```csharp
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Console;
+using System.Threading;
 
 namespace DesignPatters 
 {
+    public class Person
+    {
+        public string Name;
+        public string Position;
 
-    public class Demo
+        public override string ToString()
+        {
+            return $"{nameof(Name)}: {Name}, {nameof(Position)}: {Position}";
+        }
+
+        // This allows for recursive generics:
+        public class Builder : PersonJobBuilder<Builder>
+        {
+
+        }
+
+        public static Builder New => new Builder();
+    }
+
+    public class PersonInfoBuilder
+    {
+        protected Person person = new Person();
+
+        public PersonInfoBuilder Called(string name)
+        {
+            person.Name = name;
+            return this;
+        }
+    }
+
+    public class PersonJobBulider : PersonInfoBuilder
+    {
+        public PersonJobBuilder WorksAsA(string position)
+        {
+            person.Position = position;
+            return this;
+        }
+    }
+
+    internal class Program
     {
         static void Main(string[] args)
         {
-            
+            var vuilder = new PersonJobBuilder();
+            builder.Called("dmitri")
+                .WorksAsA(""); 
+            // this will not work because the Called method returns a PersonInfoBuilder and PersonInfoBuilder doesn't know anything about the JobBuilder.
+
+            // Once we fix the code to resemble below and the recursive generics portion in Person, we'll have this:
+            var me = Person.New
+                .Called("Sean")
+                .WordsAsA("Engineer")
+                .Build();
+            Console.WriteLine(me);
+        }
+    }
+
+    // to fix this issue, you can create an abstract class:
+    public abstract class PersonBuilder
+    {
+        protected Person person = new Person();
+
+        public Person Build()
+        {
+            return Person;
+        }
+    }
+
+    public class PersonInfoBuilder<SELF> : PersonBuilder where SELF : PersonInfoBuilder<SELF>
+    {
+        public SELF Called(string name)
+        {
+            person.Name = name;
+            return (SELF)this;
+        }
+    }
+
+    public class PersonJobBulider<SELF> : PersonInfoBuilder<PersonJobBuilder<SELF>>
+        where SELF : PersonJobBuilder<SELF>
+    {
+        public SELF WorksAsA(string position)
+        {
+            person.Position = position;
+            return (SELF)this;
         }
     }
 }
