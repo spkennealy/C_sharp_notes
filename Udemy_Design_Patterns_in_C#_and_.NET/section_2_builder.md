@@ -373,7 +373,22 @@ namespace Coding.Exercise
     public class CodeBuilder
     {
         // TODO
+        public string Code;
         
+        public CodeBuilder(string className)
+        {
+            Code = $"public class {className}\n" + "{\n";
+        }
+        
+        public void AddField(string name, string type)
+        {
+            Code += $"  public {type} {name};";
+        }
+        
+        public override string ToString()
+        {
+            return Code + "\n}";
+        }
     }
 }
 ```
