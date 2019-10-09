@@ -345,31 +345,35 @@ namespace DesignPatters
 }
 ```
 
+### **Builder Coding Exercise**
 
+You are asked to implement the Builder design pattern for rendering simple chunks of code.
 
+Sample use of the builder you are asked to create:
+```csharp
+var cb = new CodeBuilder("Person").AddField("Name", "string").AddField("Age", "int");
+Console.WriteLine(cb);
+```
 
+The expected output of the code: 
+```csharp
+public class Person
+{
+    public string Name;
+    public int Age;
+}
+```
 
-
-
-
+**Solution**
 ```csharp
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Console;
 
-namespace DesignPatters 
+namespace Coding.Exercise
 {
-    public class Demo
+    public class CodeBuilder
     {
-        static void Main(string[] args)
-        {
-
-        }
+        // TODO
+        
     }
 }
 ```
