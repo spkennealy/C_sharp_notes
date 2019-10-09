@@ -16,6 +16,8 @@ Factory method pattern and the abstract factory pattern.
 **Factory**
 * A component responsible solely for the wholesale (not piecewise) creation of objects.
 
+### **Point Example**
+
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -28,6 +30,57 @@ using static System.Console;
 
 namespace DesignPatters 
 {
+    public class Point
+    {
+        private double x, y;
+
+        public Point(double x, double y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+
+        // this won't work
+        public Point(double rho, double theta) { }
+    }
+
+    // Instead, you can do this:
+    public enum CoordinateSystem
+    {
+        Cartesian,
+        Polar
+    }
+
+    // a & b wouldn't be clear on whether it was rho and theta or x and y, so you would have to add XML doc comments like this:
+
+    // <summary>
+    // Initializs a a point from EITHER cartesian or polar
+    // <summary>
+    // <param name="a">x if cartesian, rho if polar</param>
+    // <param name="b"></param>
+    // <param name="system"></param>
+    public class Point
+    {
+        private double x, y;
+
+        public Point(double a, double b, CoordinateSystem system = CoordinatSystem.Cartesian)
+        {
+            switch (system)
+            {
+                case CoordinateSystem.Cartesian:
+                    x = a;
+                    y = b;
+                    break;
+                case CoordinateSystem.Polar:
+                    x = a * Math.Cos(b);
+                    y = a * Math.Sin(b);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(system), system, null);
+            }
+        }
+    }
+
     public class Demo
     {
         static void Main(string[] args)
@@ -37,3 +90,5 @@ namespace DesignPatters
     }
 }
 ```
+
+* This is the kind of problem that factories will solve for us.
