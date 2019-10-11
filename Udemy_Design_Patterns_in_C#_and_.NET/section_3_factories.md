@@ -137,3 +137,54 @@ namespace DesignPatters
     }
 }
 ```
+
+### **Factory**
+* Constructors must be public in this scenario
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace DesignPatters 
+{
+    public static class PointFactory
+    {
+        public static Point NewCartesianPoint(double x, double y)
+        {
+            // this will not work as is, because the constructor in Point is private, so you'll need to change it to public
+            return new Point(x, y);
+        }
+
+        public static Point NewPolarPoint(double rho, double theta)
+        {
+            return new Point(rho * Math.Cos(theta), rho * Math.Sin(theta));
+        }
+    }
+
+    public class Point
+    {
+        private double x, y;
+
+        // changing this to public will allow a developer to instantiate a Point object without the PointFactory
+        // private Point(double x, double y)
+        public Point(double x, double y)
+        {
+            this.x = x;
+            this.y = y;    
+        }
+    }
+
+    public class Demo
+    {
+        static void Main(string[] args)
+        {
+            var point = Point.NewPolarPoint(1.0, Math.PI / 2);
+        }
+    }
+}
+```
