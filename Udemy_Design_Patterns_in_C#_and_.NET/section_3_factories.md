@@ -90,5 +90,50 @@ namespace DesignPatters
     }
 }
 ```
-
 * This is the kind of problem that factories will solve for us.
+
+### **Factory Method**
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace DesignPatters 
+{
+    public class Point
+    {
+        // factory method
+        public static Point NewCartesianPoint(double x, double y)
+        {
+            return new Point(x, y);
+        }
+
+        public static Point NewPolarPoint(double rho, double theta)
+        {
+            return new Point(rho * Math.Cos(theta), rho * Math.Sin(theta));
+        }
+
+        private double x, y;
+
+        private Point(double x, double y)
+        {
+            this.x = x;
+            this.y = y;    
+        }
+    }
+
+    public class Demo
+    {
+        static void Main(string[] args)
+        {
+            var point = Point.NewPolarPoint(1.0, Math.PI / 2);
+        }
+    }
+}
+```
