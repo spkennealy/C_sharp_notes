@@ -259,6 +259,13 @@ namespace DesignPatters
             this.x = x;
             this.y = y;    
         }
+        
+        // --- below is separate from the inner factory pattern, but compliments it ----
+        // this will instantiate a new point every time you call Point.Origin.
+        public static Point Origin => new Point(0, 0);
+        // this will instantiate it once and then you have a reference to it.
+        public static Point Origin2 = new Point(0, 0);
+        // -----
 
         // this will work perfectly, but you could also remove the static keyword and instantiate a public static property that makes a new Factory().
         public static class Factory
