@@ -522,6 +522,11 @@ namespace Coding.Exercise
     public class PersonFactory
     {
         
+
+        public Person CreatePerson(string name)
+        {
+
+        }
     }
 }
 ```

@@ -1,0 +1,5 @@
+/Users/seankennealy/Projects/Factory_Coding_Exercise/Factory_Coding_Exercise/bin/Debug/Factory_Coding_Exercise.exe
+/Users/seankennealy/Projects/Factory_Coding_Exercise/Factory_Coding_Exercise/bin/Debug/Factory_Coding_Exercise.pdb
+/Users/seankennealy/Projects/Factory_Coding_Exercise/Factory_Coding_Exercise/obj/Debug/Factory_Coding_Exercise.csprojAssemblyReference.cache
+/Users/seankennealy/Projects/Factory_Coding_Exercise/Factory_Coding_Exercise/obj/Debug/Factory_Coding_Exercise.exe
+/Users/seankennealy/Projects/Factory_Coding_Exercise/Factory_Coding_Exercise/obj/Debug/Factory_Coding_Exercise.pdb
