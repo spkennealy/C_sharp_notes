@@ -513,19 +513,45 @@ using System;
 
 namespace Coding.Exercise
 {
+    // Person.cs
     public class Person
     {
         public int Id { get; set; }
         public string Name { get; set; }
     }
-
+    
+    // PersonFactory.cs
     public class PersonFactory
     {
-        
+        private int count;
+
+        public PersonFactory()
+        {
+            count = 0;
+        }
 
         public Person CreatePerson(string name)
         {
+            var person = new Person();
+            person.Name = name;
+            person.Id = count;
+            count++;
+            WriteLine($"Created {person.Name} with the id of {person.Id}.");
+            return person;
+        }
+    }
 
+    // Program.cs
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var personFactory = new PersonFactory();
+            personFactory.CreatePerson("Sean");
+            personFactory.CreatePerson("Kierstyn");
+            personFactory.CreatePerson("Emilia");
+            personFactory.CreatePerson("Kyle");
+            personFactory.CreatePerson("Kiley");
         }
     }
 }
