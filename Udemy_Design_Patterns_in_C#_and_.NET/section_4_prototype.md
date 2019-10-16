@@ -84,3 +84,86 @@ namespace DesignPatterns
 ```
 * You can extend Person with `ICloneable` and use the `.Clone()` method, but this will not create a deep copy.
 * `ICloneable` is not the best since it's a shallow copy and returns an object which you will have to cast to your specific object.
+
+### **Copy Constructors**
+* You can use a separate constructor passing in the object (in this case, Person) that you want to copy.
+```csharp
+using System;
+using System.Collections.Generic;
+using static System.Console;
+
+namespace DesignPatterns
+{
+    public class Person
+    {
+        public string[] Names;
+        public Address Address;
+
+        public Person(string[] names, Address address)
+        {
+            if (names == null)
+            {
+                throw new ArgumentNullException(paramName: nameof(name));
+            }
+            if (address == null)
+            {
+                throw new ArgumentNullException(paramName: nameof(address));
+            }
+            Names = names;
+            Address = address;
+        }
+
+        public Person(Person other)
+        {
+            Names = other.Names;
+            Address = new Address(other.Address); // Address will need a copy constructor as well.
+        }
+
+        public override string ToString()
+        {
+            return $"{nameof(Names)}: {string.Join(" ", Names)}, {nameof(Address)}: {Address}";
+        }
+    }
+
+    public class Address
+    {
+        public string StreetName;
+        public int HouseNumber;
+
+        public Address(string streetName, int houseNumber)
+        {
+            if (streeName == null)
+            {
+                throw new ArgumentNullException(paramName: nameof(streetName));
+            }
+            StreetName = streetName;
+            HouseNumber = houseNumber;
+        }
+
+        public Address(Address other)
+        {
+            StreetName = other.StreetName;
+            HouseNumber = other.HouseNumber;
+        }
+
+        public override string ToString()
+        {
+            return $"{nameof(StreetName)}: {StreetName}, {nameof(HouseNumber)}: {HouseNumber}";
+        }
+    }
+
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+            var john = new Person(new[] { "John", "Smith" }, new Address("London Road", 123));
+
+            var jane = new Person(john);
+            jane.Names[0] = "Jane";
+            jane.Address.HouseNumber = 321;
+
+            WriteLine(john); // Names: John Smith, Address: London Road 123
+            WriteLine(jane); // Names: Jane Smith, Address: London Road 321
+    }
+}
+```
