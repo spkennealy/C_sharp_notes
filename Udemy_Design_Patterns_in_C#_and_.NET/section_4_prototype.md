@@ -360,3 +360,29 @@ namespace DesignPatterns
     }
 }
 ```
+
+### **Prototype Coding Exercise**
+
+Given the definitions above, you are asked to implement `Line.DeepCopy()` to perform a deep copy of the current `Line` object.
+
+```csharp
+using System;
+
+namespace Coding.Exercise
+{
+    public class Point
+    {
+        public int X, Y;
+    }
+
+    public class Line
+    {
+        public Point Start, End;
+
+        public Line DeepCopy()
+        {
+            // code goes here...
+        }
+    }
+}
+```
