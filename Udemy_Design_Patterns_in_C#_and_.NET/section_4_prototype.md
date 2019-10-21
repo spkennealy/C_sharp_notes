@@ -381,7 +381,18 @@ namespace Coding.Exercise
 
         public Line DeepCopy()
         {
-            // code goes here...
+            var x = new Point();
+            x.X = Start.X;
+            x.Y = Start.Y;
+            var y = new Point();
+            y.X = End.X;
+            y.Y = End.Y;
+
+            var line = new Line();
+            line.Start = x;
+            line.End = y;
+
+            return line;
         }
     }
 }
