@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{5737E022-4CC8-4FE6-BAD3-B040B65F6356}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Prototype_Coding_Exercise/Program.cs">
     <Files>
-      <File FileName="Prototype_Coding_Exercise/Program.cs" Line="1" Column="1" />
+      <File FileName="Prototype_Coding_Exercise/Program.cs" Line="16" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,7 +15,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Prototype__Coding__Exercise FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Prototype__Coding__Exercise PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
