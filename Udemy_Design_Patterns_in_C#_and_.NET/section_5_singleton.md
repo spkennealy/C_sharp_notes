@@ -276,3 +276,21 @@ namespace DesignPatterns
     }
 }
 ```
+
+### **Monostate**
+
+```csharp
+using System;
+using static System.Console;
+
+namespace DesignPatterns
+{
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+            
+        }
+    }
+}
+```
