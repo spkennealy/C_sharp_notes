@@ -178,15 +178,12 @@ namespace DesignPatterns
         int GetPopulation(string name);
     }
 
-    public class SingletonDatabase : IDatabase
+    public class OrdinaryDatabase : IDatabase
     {
         private Dictionary<string, int> capitals;
-        private static int instanceCount; // add this is in here
-        public static int Count => instanceCount;
 
-        private SingletonDatabase()
+        private OrdinaryDatabase()
         {
-            instanceCount++;
             WriteLine("Initializing database");
             
             capitals = File.ReadAllLines(
@@ -201,15 +198,10 @@ namespace DesignPatterns
                 );
         }
 
-        public int GetPopulation(string name)
+        public int GetTotalPopulation(string name)
         {
             return capitals[name];
         }
-
-        private static Lazy<SingletonDatabase> instance = 
-            new Lazy<SingletonDatabase>(() => new SingletonDatabse());
-
-        public static SingletonDatabase Intstance => instance;
     }
 
     public class SingletonRecordFinder
@@ -258,30 +250,18 @@ namespace DesignPatterns
     public class SingletonTests
     {
         [Test]
-        public void IsSingletonTest()
+        public void DIPopulationTest()
         {
-            var db = SingletonDatabase.Instance;
-            var db2 = SingletonDatabase.Instance;
-            Assert.That(db, Is.SameAs(db2));
-            Assert.That(SingletonDatabase.Count, Is.EqualTo(1));
-        }
+            var cb = new ContainerBuilder();
+            cb.RegisterType<OrdinaryDatabase>()
+                .As<IDatabase>()
+                .SingleInstance();
+            cb.RegisterType<ConfigurableRecordFinder>();
 
-        [Test]
-        public void SingletonTotalPopulationTest()
-        {
-            var rf = new SingletonRecordFinder();
-            var names = new[] { "Seoul", "Mexico City" };
-            int tp = rf.GetTotalPopulation(names);
-            Assert.That(tp, Is.EqualTo(17500000 + 17400000)); // you have to hard code the numbers in this case
-        }
-
-        [Test]
-        public void ConfigurablePopulationTest()
-        {
-            var rf = ConfigurableRecordFinder(new DummyDatabase());
-            var names = new[] { "alpah", "gamma" };
-            int tp = rf.GetTotalPopulation(names);
-            Assert.That(tp, Is.EqualTo(4));
+            using (var c = cb.Build())
+            {
+                var rf = c.Resolve<ConfigurableRecordFinder>();
+            }
         }
     }
 
