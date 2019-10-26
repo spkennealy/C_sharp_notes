@@ -345,3 +345,9 @@ namespace Coding.Exercise
     }
 }
 ```
+
+### **Summary**
+* Making a 'safe' singleton is easy: construct a static Lazy<T> and return it's Value.
+* Singletons are difficult to test.
+* Instead of directly using a signleton, consider depending on an abstraction (e.g., an interface).
+* Consider defining singleton lifetime in DI container.
