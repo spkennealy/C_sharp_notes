@@ -332,14 +332,16 @@ This method takes a factory method that returns an object and it's up to you to 
 ```csharp
 using System;
 
-  namespace Coding.Exercise
-  {
+namespace Coding.Exercise
+{
     public class SingletonTester
     {
-      public static bool IsSingleton(Func<object> func)
-      {
-        // todo
-      }
+        public static bool IsSingleton(Func<object> func)
+        {
+            var results1 = func();
+            var results2 = func();
+            return results1 == results2;
+        }
     }
-  }
+}
 ```
