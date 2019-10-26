@@ -323,3 +323,23 @@ namespace DesignPatterns
 }
 ```
 * Have the state of the class that you want a singleton for be static but being exposed in a non-static way.
+
+### **Singleton Coding Exercise**
+
+Since implementing a singleton is easy, you have a different challenge: write a method called `IsSingleton()`. 
+This method takes a factory method that returns an object and it's up to you to determine whether or not that object is a singleton instance.
+
+```csharp
+using System;
+
+  namespace Coding.Exercise
+  {
+    public class SingletonTester
+    {
+      public static bool IsSingleton(Func<object> func)
+      {
+        // todo
+      }
+    }
+  }
+```
