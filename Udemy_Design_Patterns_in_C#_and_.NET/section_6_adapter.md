@@ -273,7 +273,68 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
             Draw();
-            Draw(); // this will generate the points 16 times and is uneccesary
+            Draw(); 
+        }
+    }
+}
+```
+
+### **Generic Value Adapter**
+
+```csharp
+using System;
+using System.Linq;
+
+namespace DesignPatterns
+{    
+    // Vector2f, Vector3i
+
+    public interface IInteger
+    {
+        int Value { get; }
+    }
+
+    public static class Dimensions
+    {
+        public class Two : IInteger
+        {
+            public int Value => 2;
+        }
+
+        public class Three : IInteger
+        {
+            public int Value => 3;
+        }   
+    }
+
+    public class Vector<T, D> where D : IInteger, new()
+    {
+        protected T[] data;
+
+        public Vector()
+        {
+            // data = new T[D]; // this cannot work because D needs to be a literal and not a generic
+            data = new T[new D().Value];
+        }
+
+        public T this[int index]
+        {
+            get => data[index];
+            set => data[index] = value;
+        }
+    }
+
+    public class Vector2i : Vector<int, Dimensions.Two>
+    {
+
+    }
+
+    class Demo
+    {
+        static void Main(string[] args)
+        {
+            var v = new Vector2i();
+            v[0] = 0;
         }
     }
 }
