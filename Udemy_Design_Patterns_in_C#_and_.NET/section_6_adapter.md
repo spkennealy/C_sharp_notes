@@ -317,24 +317,76 @@ namespace DesignPatterns
             data = new T[new D().Value];
         }
 
+        public Vector(params T[] values)
+        {
+            var requiredSize = new D().Value;
+            data = new T[requiredSize];
+
+            var providedSize = values.Length;
+
+            for (int i = 0; i < Math.Min(requiredSize, providedSize); ++i)
+                datat[i] = values[i];
+        }
+
         public T this[int index]
         {
             get => data[index];
             set => data[index] = value;
         }
+
+        public T X
+        {
+            get => data[0];
+            set => data[0] = value;
+        }
+    }
+
+    public class VectorOfInt<D> : Vector<int, D> where D : IInteger, new()
+    {
+        public VectorOfInt()
+        {
+
+        }
+
+        public VectorOfInt(params int[] values) : base(values)
+        {
+
+        }
+
+        public static VectorOfInt<D> operator + (VectorOfInt<D> lhs, VectorOfInt<D> rhs)
+        {
+            var result = new VectorOfInt<D>();
+            var dim = new D().Value;
+            for (int i = 0; i < dim; i++)
+            {
+                result[i] = lhs[i] + rhs[i];
+            }
+        }
     }
 
     public class Vector2i : Vector<int, Dimensions.Two>
     {
+        public Vector2i()
+        {
 
+        }
+
+        public Vector2i(params int[] values) : base(values)
+        {
+
+        }
     }
 
     class Demo
     {
         static void Main(string[] args)
         {
-            var v = new Vector2i();
+            var v = new Vector2i(1, 2);
             v[0] = 0;
+
+            var vv = new Vector2i(3, 2);
+
+            var result = v + vv;
         }
     }
 }
