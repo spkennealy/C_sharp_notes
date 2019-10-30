@@ -307,7 +307,9 @@ namespace DesignPatterns
         }   
     }
 
-    public class Vector<T, D> where D : IInteger, new()
+    public class Vector<TSelf, T, D> 
+        where D : IInteger, new() 
+        where TSelf : Vector<TSelf, T, D>, new()
     {
         protected T[] data;
 
@@ -328,6 +330,21 @@ namespace DesignPatterns
                 datat[i] = values[i];
         }
 
+        public static TSelf Create(params T[] values)
+        {
+            // return new Vector<T, D>(values);
+            var result = new TSelf();
+            var requiredSize = new D().Value;
+            result.data = new T[requiredSize];
+
+            var providedSize = values.Length;
+
+            for (int i = 0; i < Math.Min(requiredSize, providedSize); ++i)
+                result.datat[i] = values[i];
+
+            return result;
+        }
+
         public T this[int index]
         {
             get => data[index];
@@ -341,7 +358,14 @@ namespace DesignPatterns
         }
     }
 
-    public class VectorOfInt<D> : Vector<int, D> where D : IInteger, new()
+    public class VectorOfFloat<TSelf, D> : Vector<VectorOfFloat<TSelf, D>, float, D> 
+        where D : IInteger, new()
+    {
+
+    }
+
+    public class VectorOfInt<D> : Vector<VectorOfInt<D>, int, D> 
+        where D : IInteger, new()
     {
         public VectorOfInt()
         {
@@ -364,7 +388,7 @@ namespace DesignPatterns
         }
     }
 
-    public class Vector2i : Vector<int, Dimensions.Two>
+    public class Vector2i : VectorOfInt<Dimensions.Two>
     {
         public Vector2i()
         {
@@ -377,6 +401,15 @@ namespace DesignPatterns
         }
     }
 
+    public class Vector3f : 
+        VectorOfFloat<Vector3f, Dimensions.Three>
+    {
+        public override string ToString()
+        {
+            return $"{string.Join(",", data)}";
+        }   
+    }
+
     class Demo
     {
         static void Main(string[] args)
@@ -387,6 +420,8 @@ namespace DesignPatterns
             var vv = new Vector2i(3, 2);
 
             var result = v + vv;
+
+            var u = Vector3f.Create(3.5f, 2.2f, 1); // we want this Create to give us a Vector3f
         }
     }
 }
