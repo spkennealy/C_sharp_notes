@@ -358,8 +358,9 @@ namespace DesignPatterns
         }
     }
 
-    public class VectorOfFloat<TSelf, D> : Vector<VectorOfFloat<TSelf, D>, float, D> 
+    public class VectorOfFloat<TSelf, D> : Vector<TSelf, float, D> 
         where D : IInteger, new()
+        where TSelf : Vector<TSelf, float, D>, new()
     {
 
     }
@@ -426,3 +427,4 @@ namespace DesignPatterns
     }
 }
 ```
+* Recursive generics can help a lot, but it is very complex.
