@@ -1,19 +1,19 @@
 ﻿<Properties StartupConfiguration="{616F35FC-9657-43BB-9CFE-9C6AAA4E4ED7}|Default">
   <MonoDevelop.Ide.ItemProperties.Adapter__Coding__Exercise FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Adapter_Coding_Exercise/SquareToRectangleAdapter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Adapter_Coding_Exercise/Program.cs">
     <Files>
-      <File FileName="Adapter_Coding_Exercise/Program.cs" Line="9" Column="13" />
-      <File FileName="Adapter_Coding_Exercise/ExtensionMethods.cs" />
-      <File FileName="Adapter_Coding_Exercise/IRectangle.cs" />
-      <File FileName="Adapter_Coding_Exercise/Square.cs" />
-      <File FileName="Adapter_Coding_Exercise/SquareToRectangleAdapter.cs" Line="15" Column="16" />
+      <File FileName="Adapter_Coding_Exercise/Program.cs" Line="11" Column="54" />
+      <File FileName="Adapter_Coding_Exercise/ExtensionMethods.cs" Line="1" Column="1" />
+      <File FileName="Adapter_Coding_Exercise/IRectangle.cs" Line="1" Column="1" />
+      <File FileName="Adapter_Coding_Exercise/Square.cs" Line="1" Column="1" />
+      <File FileName="Adapter_Coding_Exercise/SquareToRectangleAdapter.cs" Line="15" Column="42" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Adapter_Coding_Exercise" expanded="True">
             <Node name="Adapter_Coding_Exercise" expanded="True">
-              <Node name="SquareToRectangleAdapter.cs" selected="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
