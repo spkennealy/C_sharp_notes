@@ -462,11 +462,15 @@ namespace Coding.Exercise
 
     public class SquareToRectangleAdapter : IRectangle
     {
+        private readonly Square square;
+        
         public SquareToRectangleAdapter(Square square)
         {
-            // todo
+            this.square = square;
         }
-        // todo
+        
+        public int Width => square.Side;
+        public int Height => square.Side;
     }
 }
 ```
