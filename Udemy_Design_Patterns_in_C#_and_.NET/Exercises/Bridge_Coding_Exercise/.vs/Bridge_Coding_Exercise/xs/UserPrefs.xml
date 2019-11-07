@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{C5CA1946-BF53-4492-AE5D-51EF83E2D1E3}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Bridge_Coding_Exercise/Program.cs">
     <Files>
-      <File FileName="Bridge_Coding_Exercise/Program.cs" Line="30" Column="62" />
+      <File FileName="Bridge_Coding_Exercise/Program.cs" Line="5" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,5 +21,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Bridge__Coding__Exercise FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Bridge__Coding__Exercise PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

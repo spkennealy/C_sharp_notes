@@ -1,0 +1,5 @@
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_Design_Patterns_in_C#_and_.NET/Exercises/Bridge_Coding_Exercise/Bridge_Coding_Exercise/bin/Debug/Bridge_Coding_Exercise.exe
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_Design_Patterns_in_C#_and_.NET/Exercises/Bridge_Coding_Exercise/Bridge_Coding_Exercise/bin/Debug/Bridge_Coding_Exercise.pdb
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_Design_Patterns_in_C#_and_.NET/Exercises/Bridge_Coding_Exercise/Bridge_Coding_Exercise/obj/Debug/Bridge_Coding_Exercise.csprojAssemblyReference.cache
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_Design_Patterns_in_C#_and_.NET/Exercises/Bridge_Coding_Exercise/Bridge_Coding_Exercise/obj/Debug/Bridge_Coding_Exercise.exe
+/Users/seankennealy/Desktop/Insightly/C_sharp_notes/Udemy_Design_Patterns_in_C#_and_.NET/Exercises/Bridge_Coding_Exercise/Bridge_Coding_Exercise/obj/Debug/Bridge_Coding_Exercise.pdb
