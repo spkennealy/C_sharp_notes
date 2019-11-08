@@ -1,11 +1,11 @@
 ﻿namespace Bridge_Coding_Exercise
 {
-    public abstract class Shape
+    public class RastRenderer : IRenderer
     {
-        public string Name { get; set; }
+        public string WhatToRenderAs { get; set; }
         public IRenderer Renderer;
 
-        public Shape(IRenderer renderer)
+        public RastRenderer(IRenderer renderer)
         {
             Renderer = renderer;
         }

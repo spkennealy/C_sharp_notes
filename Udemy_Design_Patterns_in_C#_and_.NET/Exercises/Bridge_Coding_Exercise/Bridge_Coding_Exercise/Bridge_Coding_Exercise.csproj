@@ -37,6 +37,9 @@
     <Compile Include="Square.cs" />
     <Compile Include="VectorSquare.cs" />
     <Compile Include="RasterSquare.cs" />
+    <Compile Include="IRenderer.cs" />
+    <Compile Include="VectorRenderer.cs" />
+    <Compile Include="RastRenderer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

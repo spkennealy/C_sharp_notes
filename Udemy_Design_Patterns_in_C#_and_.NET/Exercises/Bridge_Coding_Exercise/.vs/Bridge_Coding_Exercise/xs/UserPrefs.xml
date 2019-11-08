@@ -1,14 +1,22 @@
 ﻿<Properties StartupConfiguration="{C5CA1946-BF53-4492-AE5D-51EF83E2D1E3}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Bridge_Coding_Exercise/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Bridge_Coding_Exercise/Square.cs">
     <Files>
       <File FileName="Bridge_Coding_Exercise/Program.cs" Line="5" Column="1" />
+      <File FileName="Bridge_Coding_Exercise/RasterSquare.cs" Line="3" Column="39" />
+      <File FileName="Bridge_Coding_Exercise/Shape.cs" Line="5" Column="9" />
+      <File FileName="Bridge_Coding_Exercise/Square.cs" Line="1" Column="1" />
+      <File FileName="Bridge_Coding_Exercise/Triangle.cs" Line="1" Column="1" />
+      <File FileName="Bridge_Coding_Exercise/VectorSquare.cs" Line="1" Column="1" />
+      <File FileName="Bridge_Coding_Exercise/IRenderer.cs" Line="3" Column="12" />
+      <File FileName="Bridge_Coding_Exercise/VectorRenderer.cs" Line="3" Column="5" />
+      <File FileName="Bridge_Coding_Exercise/RastRenderer.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Bridge_Coding_Exercise" expanded="True">
             <Node name="Bridge_Coding_Exercise" expanded="True">
-              <Node name="Program.cs" selected="True" />
+              <Node name="Square.cs" selected="True" />
             </Node>
           </Node>
         </State>
