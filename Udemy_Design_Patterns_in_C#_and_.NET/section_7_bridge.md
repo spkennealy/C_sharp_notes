@@ -207,3 +207,7 @@ using System;
   }
 ```
 
+### **Summary**
+* Decouple abstraction from implementation
+* Both can exitst as hierarchies
+* A stronger form of encapsulation
