@@ -2,12 +2,9 @@
 {
     public class VectorRenderer : IRenderer
     {
-        public string WhatToRenderAs { get; set; }
-        public IRenderer Renderer;
-
-        public VectorRenderer(IRenderer renderer)
+        public string WhatToRenderAs
         {
-            Renderer = renderer;
+            get { return "lines"; }
         }
     }
 }

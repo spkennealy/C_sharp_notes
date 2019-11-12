@@ -35,8 +35,6 @@
     <Compile Include="Shape.cs" />
     <Compile Include="Triangle.cs" />
     <Compile Include="Square.cs" />
-    <Compile Include="VectorSquare.cs" />
-    <Compile Include="RasterSquare.cs" />
     <Compile Include="IRenderer.cs" />
     <Compile Include="VectorRenderer.cs" />
     <Compile Include="RastRenderer.cs" />

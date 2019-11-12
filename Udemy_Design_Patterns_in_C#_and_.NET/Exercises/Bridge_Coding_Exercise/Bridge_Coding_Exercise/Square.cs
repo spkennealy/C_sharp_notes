@@ -2,6 +2,9 @@
 {
     public class Square : Shape
     {
-        public Square() => Name = "Square";
+        public Square(IRenderer renderer) : base(renderer)
+        {
+            Name = "Square";
+        }
     }
 }

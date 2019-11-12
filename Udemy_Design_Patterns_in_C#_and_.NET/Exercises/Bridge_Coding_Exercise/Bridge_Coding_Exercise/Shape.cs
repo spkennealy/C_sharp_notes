@@ -2,12 +2,18 @@
 {
     public abstract class Shape
     {
-        public string Name { get; set; }
-        public IRenderer Renderer;
+        private IRenderer renderer;
 
-        public Shape(IRenderer renderer)
+        protected Shape(IRenderer renderer)
         {
-            Renderer = renderer;
+            this.renderer = renderer;
+        }
+
+        public string Name { get; set; }
+
+        public override string ToString()
+        {
+            return $"Drawing {Name} as {renderer.WhatToRenderAs}";
         }
     }
 }

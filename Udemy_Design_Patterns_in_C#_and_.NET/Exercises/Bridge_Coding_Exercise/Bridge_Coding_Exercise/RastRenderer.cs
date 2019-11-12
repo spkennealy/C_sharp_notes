@@ -1,13 +1,10 @@
 ﻿namespace Bridge_Coding_Exercise
 {
-    public class RastRenderer : IRenderer
+    public class RasterRenderer : IRenderer
     {
-        public string WhatToRenderAs { get; set; }
-        public IRenderer Renderer;
-
-        public RastRenderer(IRenderer renderer)
+        public string WhatToRenderAs
         {
-            Renderer = renderer;
+            get { return "pixels"; }
         }
     }
 }
