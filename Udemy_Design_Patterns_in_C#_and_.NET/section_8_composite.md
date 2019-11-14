@@ -12,3 +12,33 @@
 
 **Composite**
 * A mechanism for treating individual (scalar) objects and compositions of objects in a uniform manner.
+
+### **Geometric Shapes**
+```csharp
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
+using Autofac;
+using MoreLinq;
+using NUnit.Framework;
+using static System.Console;
+
+namespace DesignPatterns
+{
+    public class 
+    {
+        
+    }
+
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
+    }
+}
+```
