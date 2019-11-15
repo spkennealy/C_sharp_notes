@@ -122,12 +122,6 @@ namespace DesignPatterns
         public float Value;
         public List<Neuron> In, Out;
 
-        public void ConnectTo(Neuron other)
-        {
-            Out.Add(other);
-            other.In.Add(this);
-        }
-
         public IEnumerator<Neuron> GetEnumerator()
         {
             yield return this;
@@ -155,6 +149,9 @@ namespace DesignPatterns
 
             var layer1 = NeuronLayer();
             var layer2 = NeuronLayer();
+
+            neuron1.ConnectTo(layer1); // these work now with the ExtensionMethods
+            layer1.ConnectTo(layer2);
         }
     }
 }
