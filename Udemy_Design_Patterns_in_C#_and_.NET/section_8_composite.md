@@ -208,3 +208,10 @@ using System.Collections.Generic;
     }
   }
 ```
+
+### **Summary**
+* Objects can use other objects via inheritance/composition
+* Some composed and singular objects need similar/identical behavior
+* Composite design pattern lets us treat both types of obejcts uniformly
+* C# has special support for the *enumeration* concept
+* A single object can masquerade as a collection with *yield return this;*
