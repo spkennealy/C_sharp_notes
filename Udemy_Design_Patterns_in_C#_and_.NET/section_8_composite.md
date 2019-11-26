@@ -170,7 +170,7 @@ using System.Collections.Generic;
 
   namespace Coding.Exercise
   {
-    public interface IValueContainer
+    public interface IValueContainer : IEnumerable<int>
     {
       
     }
@@ -178,6 +178,16 @@ using System.Collections.Generic;
     public class SingleValue : IValueContainer
     {
       public int Value;
+
+      public IEnumerator<int> GetEnumerator()
+        {
+            yield return Value;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 
     public class ManyValues : List<int>, IValueContainer
