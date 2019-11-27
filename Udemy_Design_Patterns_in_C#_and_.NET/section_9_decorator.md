@@ -14,3 +14,41 @@
 **Decorator**
 Facilitates the addition of behaviors to individual objects without inheriting from them.
 
+### **Custom String Builder**
+```csharp
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
+using System.Xml.Serialization;
+using Autofac;
+using MoreLinq;
+using NUnit.Framework;
+using static System.Console;
+
+namespace DesignPatterns
+{
+    // public class CodeBuilder : StringBuilder // cannot inherit from a sealed class
+    public class CodeBuilder
+    {
+        private StringBuilder builder = new StringBuilder();
+
+        // Generate the delegating members by right clicking on StringBuilder
+        
+        // ... many different StringBuilder methods that return CodeBuilders
+    }
+
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
+    }
+}
+```
