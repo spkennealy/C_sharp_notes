@@ -39,7 +39,7 @@ namespace DesignPatterns
         private StringBuilder builder = new StringBuilder();
 
         // Generate the delegating members by right clicking on StringBuilder
-        
+
         // ... many different StringBuilder methods that return CodeBuilders
     }
 
@@ -47,6 +47,46 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+
+        }
+    }
+}
+```
+
+### **Adapter-Decorator**
+```csharp
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Dynamic;
+using System.Linq;
+using System.Text;
+using Autofac;
+using ImpromptuInterface;
+using JetBrains.Annotations;
+using MoreLinq;
+using NUnit.Framework;
+using static System.Console;
+
+namespace DesignPatterns
+{
+    public class MyStringBuilder
+    {
+        StringBuilder sb = new StringBuilder();
+        // Generate the delegating members
+    }
+
+    static class Demo
+    {
+        static void Main(string[] args)
+        {
+            StringBuilder s = "hello"; // this won't work
+            s += "world"; // this won't work
+            WriteLine(s);
+
+            // ------------
+
 
         }
     }
