@@ -130,7 +130,21 @@ using static System.Console;
 
 namespace DesignPatterns
 {
-    
+    public class Bird
+    {
+        public void Fly()
+        {
+            WriteLine("Soaring in the sky");
+        }
+    }
+
+    public class Lizard
+    {
+        public void Crawl()
+        {
+            WriteLine("Crawling in the dirt");
+        }
+    }
 
     static class Demo
     {
