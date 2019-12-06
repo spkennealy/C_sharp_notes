@@ -88,6 +88,11 @@ namespace DesignPatterns
             return msb;
         }
 
+        public override string ToString()
+        {
+            return sb.ToString();
+        }
+
         // Generate the delegating members
     }
 
@@ -101,7 +106,9 @@ namespace DesignPatterns
 
             // ------------
 
-
+            MyStringBuilder s = "hello"; // this will work
+            s += "world"; 
+            WriteLine(s);
         }
     }
 }
