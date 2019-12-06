@@ -130,7 +130,13 @@ using static System.Console;
 
 namespace DesignPatterns
 {
-    public class Bird
+    public interface IBird
+    {
+        void Fly();
+    }
+
+    // right click and 'Extract Interface'
+    public class Bird : IBird
     {
         public void Fly()
         {
@@ -138,12 +144,24 @@ namespace DesignPatterns
         }
     }
 
-    public class Lizard
+    public interface ILizard
+    {
+        void Crawl();
+    }
+
+    // right click and 'Extract Interface'
+    public class Lizard : ILizard
     {
         public void Crawl()
         {
             WriteLine("Crawling in the dirt");
         }
+    }
+
+    public class Dragon : ILizard, IBird
+                        // : Lizard, Bird // this won't work (you can only inherit from one)
+    {
+
     }
 
     static class Demo
