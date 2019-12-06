@@ -113,3 +113,31 @@ namespace DesignPatterns
     }
 }
 ```
+
+### **Multiple Inheritance with Interfaces**
+```csharp
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Dynamic;
+using System.Linq;
+using System.Text;
+using Autofac;
+using MoreLinq;
+using NUnit.Framework;
+using static System.Console;
+
+namespace DesignPatterns
+{
+    
+
+    static class Demo
+    {
+        static void Main(string[] args)
+        {
+            
+        }
+    }
+}
+```
