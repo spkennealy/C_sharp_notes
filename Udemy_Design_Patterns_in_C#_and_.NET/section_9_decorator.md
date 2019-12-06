@@ -73,7 +73,21 @@ namespace DesignPatterns
 {
     public class MyStringBuilder
     {
-        StringBuilder sb = new StringBuilder();
+        private StringBuilder sb = new StringBuilder();
+
+        public static implicit operator MyStringBuilder(string s)
+        {
+            var msb = new MyStringBuilder();
+            msb.sb.Append(s);
+            return msb;
+        }
+
+        public static MyStringBuilder operator +(MyStringBuilder msb, string s)
+        {
+            msb.Append(s);
+            return msb;
+        }
+
         // Generate the delegating members
     }
 
