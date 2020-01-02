@@ -133,35 +133,64 @@ namespace DesignPatterns
     public interface IBird
     {
         void Fly();
+        int Weight { get; set; }
     }
 
     // right click and 'Extract Interface'
     public class Bird : IBird
     {
+        public int Weight { get; set; }
+
         public void Fly()
         {
-            WriteLine("Soaring in the sky");
+            WriteLine($"Soaring in the sky with {Weight}");
         }
     }
 
     public interface ILizard
     {
         void Crawl();
+        int Weight { get; set; }
     }
 
     // right click and 'Extract Interface'
     public class Lizard : ILizard
     {
+        public int Weight { get; set; }
+
         public void Crawl()
         {
-            WriteLine("Crawling in the dirt");
+            WriteLine($"Crawling in the dirt with {Weight}");
         }
     }
 
     public class Dragon : ILizard, IBird
-                        // : Lizard, Bird // this won't work (you can only inherit from one)
+                     // : Lizard, Bird // this won't work (you can only inherit from one)
     {
+        private Bird bird = new Bird();
+        private Lizard lizard = new Lizard();
 
+        // Generate members with resharper
+        public void Fly()
+        {
+            bird.Fly();
+        }
+
+        public void Crawl()
+        {
+            lizard.Crawl();
+        }
+
+        public int Weight 
+        { 
+            get { return weight;} 
+            set
+            {
+                weight = value;
+                bird.Weight = value;
+                lizard.Weight = value;
+            }
+        }
     }
 
     static class Demo
