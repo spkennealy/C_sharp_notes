@@ -202,3 +202,48 @@ namespace DesignPatterns
     }
 }
 ```
+
+### **Multiple Inheritance with Default Interface Members**
+
+```csharp
+namespace PatterDemoCore
+{
+    using static System.Console;
+
+    public interface ICreature
+    {
+        int Age { get; set; }
+    }
+
+    public interface IBird : ICreature
+    {
+        void Fly()
+        {
+            if (Age >= 10)
+                WriteLine("I am flying");
+        }
+    }
+
+    public interface ILizard : ICreature
+    {
+        void Crawl()
+        {
+            if (Age >= 10)
+                WriteLine("I am crawling");
+        }
+    }
+
+    public class Dragon : ICreature
+    {
+        public int Age { get; set; }
+    }
+
+    public class Demo
+    {
+        public static void Main(string[] args)
+        {
+
+        }
+    }
+}
+```
