@@ -233,7 +233,9 @@ namespace PatterDemoCore
         }
     }
 
-    public class Dragon : ICreature
+    public class Organism {}
+
+    public class Dragon : Organism, ICreature, // these can be added: IBird, ILizard
     {
         public int Age { get; set; }
     }
@@ -242,7 +244,17 @@ namespace PatterDemoCore
     {
         public static void Main(string[] args)
         {
+            Dragon d = new Dragon { Age = 5 };
 
+            if (d is IBird bird)
+            {
+                bird.Fly();
+            }
+
+            if (d is ILizard lizard)
+            {
+                lizard.Crawl();
+            }
         }
     }
 }
